@@ -1,0 +1,244 @@
+.start-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(3);
+  z-index: 9999;
+  animation: logoMove 2s ease forwards;
+}
+
+.start-logo img {
+  width: 150px;
+  height: auto;
+}
+
+@keyframes logoMove {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 20px;
+    left: 20px;
+    transform: translate(0, 0) scale(0.7);
+    opacity: 1;
+  }
+}
+
+main {
+    height: 100%;
+}
+
+.main-content {
+  
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.login-header-wrapper {
+    padding-right: 100px;
+    display: flex;
+    width: auto;
+    justify-content: flex-end;
+    align-items: center;
+    height: 160px;
+}
+.login-header {
+    display: flex;
+    gap: 35px;
+    opacity: 1;
+}
+.login-header button {
+    width: 91px;
+    height: 49px;
+    background: #2A3647;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.login-header button:hover {
+    background-color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 48px 115px;
+    background: #FFFFFF;
+}
+.login-container h1 {
+    text-align: center;
+    font-size: 61px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.underline-blue {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 288px;
+    opacity: 1;
+    color: white;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+.login-container form input {
+    width: 300px;
+    gap: 10px;
+    opacity: 1;
+    border-radius: 10px;
+    padding: 12px 21px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1
+}
+.login-container form input:hover {
+    cursor: pointer;
+}
+.login-container form input:focus{
+    border: 1px solid #29ABE2;
+    outline: none;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  
+}
+
+.input-wrapper .icon img {
+  width: 20px;
+  height: 16px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+
+
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    opacity: 1;
+}
+.login-btn {
+    background: #2A3647;
+    border-radius: 8px;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    width: 130px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 24px;
+}
+.login-btn:hover {
+    background-color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+.guest-btn {
+    background: #FFFFFF;
+    border-radius: 8px;
+    color: #2A3647;
+    font-size: 21px;
+    font-weight: 700;
+    border: 1px solid #2A3647;
+    cursor: pointer;
+    width: 177px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.guest-btn:hover {
+    color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+
+.footer-rights {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 317px;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding-top: 80px;
+
+}
+
+.footer-rights a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding: 8px;
+    gap: 8px;
+    width: 121px;
+    height: 35px;
+}
+.footer-rights p{
+    color: #A8A8A8;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    width: 121px;
+    height: 35px;
+}
+
+.required {
+    color: #FF8190;
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+.input-error {
+    border: 1px solid #FF8190 !important; 
+}
+
+/*Edge/IE: natives Reveal-/Clear-Icon ausblenden */
+input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }

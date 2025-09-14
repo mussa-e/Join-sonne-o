@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../add-task/add-task.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../add-task/select.css">
+
+    
+    
+
+    
+</head>
+<body>
+
+    <header>
+        <div class="header-under">
+            <p>Kanban Project Management Tool</p>
+            
+            <div class="header-right">
+            <a href="../help/help.html">
+                <img class="help-img" src="../img/help.svg">
+            </a>
+            <a class="initials-wrapper" onclick="openSubmenu(event)" href="#">
+                <img id="elipse-img" class="elipse-img" src="../img/Ellipse 3.svg">
+                <p id="initials" class="initials"></p>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="submenu flex" id="submenu">
+        <a href="../legal notice/legalnotice.html">Legal Notice</a>
+        <a href="../privacy policy/privacy.html">Privacy</a>
+        <a onclick="logOut()" href="../index/index.html">Log out</a>
+    </div>
+
+    <nav>
+
+        <img class="nav-logo" src="../img/join-logo-white.svg">
+
+        <div class="nav-links">
+            <a href="../summary/summary.html">
+            <img src="../img/summary.svg">
+            <p>Summary</p>
+            </a>
+
+            <a href="../add-task/add-task.html">
+            <img src="../img/add-task.svg">
+            <p>Add Task</p>
+            </a>
+
+            <a href="../board/board.html">
+            <img src="../img/board.svg">
+            <p>Board</p>
+            </a>
+
+            <a href="../contacts/contacts.html">
+            <img src="../img/contacts.svg">
+            <p>Contacts</p>
+            </a>
+
+        </div>
+
+        <div class="nav-rights">
+            <a href="../privacy policy/privacy.html">
+                <p>Privacy Policy</p>
+            </a>
+            <a href="../legal notice/legalnotice.html">
+                <p>Legal Notice</p>
+            </a>
+
+        </div>
+
+    </nav>
+
+    <main>
+        <h1>Add Task</h1>
+
+        <div class="input-container">
+
+            <section class="input-section-left">
+                <label>Title<span class="requiredStar">*</span></label>
+                <input id="title" type="text" placeholder="Enter a title">
+                <p class="required d-none">This field is required</p>
+
+                <label>Description</label>
+                <textarea rows="10" id="description" placeholder="Enter a description"></textarea>
+                
+                <label>Due Date<span class="requiredStar">*</span></label>
+                <input id="date" type="date">
+                <p class="required d-none">This field is required</p>
+            </section>
+
+            <div class="line"></div>
+
+            <div class="input-section-right">
+                <label for="prio">Priority</label>
+                    <section class="priority-section">
+                        <button data-priority="urgent" type="button">Urgent<img src="../img/urgent.svg"></button>
+
+                        <button data-priority="medium" type="button">Medium<img src="../img/medium.svg"></button>
+
+                        <button data-priority="low" type="button">Low<img src="../img/low.svg"></button>
+                    </section>
+
+                    <label for="contactSelection">Assigned to</label>
+                    <div class="custom-select">
+                        <input id="assign-input" class="select-trigger assign-input" placeholder="Select contacts to assign">
+                        <img class="assign-img" src="../img/arrow_drop_downaa.svg"> 
+                            
+                        
+                        <ul class="options options-assigned-to" id="contactSelection">
+                            <!--  -->
+                        </ul>
+                        <div id="assigned-symbols" class="assigned-symbols">
+                            <!-- assigned -->
+                        </div>
+                    </div>
+                    
+
+
+
+                    <label for="category">Category<span class="requiredStar">*</span></label>
+                    <div class="custom-select" id="category">
+                        <button type="button" class="select-trigger">
+                            Select Task Category <img src="../img/arrow_drop_downaa.svg">
+                        </button>
+                        <ul class="options">
+                            <li data-value="Technical Task">Technical Task</li>
+                            <li data-value="User Story">User Story</li>
+                        </ul>
+                        </div>
+                    <!-- <select class="select-category" id="Category" tabindex="0">
+                        <option value="" disabled selected hidden>Select Task Category</option>
+                        <option value="Technical Task">Technical Task</option>
+                        <option value="User Story">User Story</option>
+                    </select>
+                    <p class="required d-none">This field is required</p> -->
+
+
+
+                    <label for="subtask">Subtask</label>
+                    <div class="subtask-wrapper">
+                        <input id="subtask" class="subtask" type="text" placeholder="Enter new subtask">
+                            <span class="subtask-icon">
+                                <img onmousedown="clearSubtask()" class="x" src="../img/x2.svg">
+                                <img class="delimiter" src="../img/delimiter-vertical.svg">
+                                <img onmousedown="renderSubtask()" class="hook" src="../img/hook-dark.svg">
+                            </span>
+                    </div>
+                    <ul class="ul-div" id="subtask-list-1" class="subtask-list">
+                    </ul>
+                    
+                    
+                   
+
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <div class="footer-left">
+                <p class="requiredStar">*</p><p>This field is required</p>
+            </div>
+
+            <div class="footer-buttons-section">
+                <button class="clear-btn" type="reset">Clear<img src="../img/x.svg"></button>
+                <button onclick="createTask()" class="create-task-btn">Create Task<img src="../img/doneSymbol.svg"></button>
+            </div>
+
+        </div>
+
+
+        <div class="report" id="report">
+            Task added to board <img src="../img/board.svg">
+        </div>
+
+    </main>
+    
+    <script src="../add-task/add-task.js"></script>
+    <script src="../index/index.js"></script>
+    <script src="../script.js" defer></script>
+    <script src="../sign up/register.js"></script>
+    <script src="../add-task/subtask.js"></script>
+    <script src="../contacts/contact.js"></script>
+    <script src="../add-task/select.js"></script>
+    
+</body>
+</html>

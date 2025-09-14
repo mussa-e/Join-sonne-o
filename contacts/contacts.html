@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../add-task/add-task.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../contacts/contacts.css">
+
+    
+
+    
+</head>
+<body onload="renderContactList()">
+
+    <header>
+        <div class="header-under">
+            <p>Kanban Project Management Tool</p>
+            
+            <div class="header-right">
+            <a href="../help/help.html">
+                <img class="help-img" src="../img/help.svg">
+            </a>
+            <a class="initials-wrapper" onclick="openSubmenu(event)" href="#">
+                <img id="elipse-img" class="elipse-img" src="../img/Ellipse 3.svg">
+                <p id="initials" class="initials"></p>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="submenu flex" id="submenu">
+        <a href="../legal notice/legalnotice.html">Legal Notice</a>
+        <a href="../privacy policy/privacy.html">Privacy</a>
+        <a onclick="logOut()" href="../index/index.html">Log out</a>
+    </div>
+
+    <nav>
+
+        <img class="nav-logo" src="../img/join-logo-white.svg">
+
+        <div class="nav-links">
+            <a href="../summary/summary.html">
+            <img src="../img/summary.svg">
+            <p>Summary</p>
+            </a>
+
+            <a href="../add-task/add-task.html">
+            <img src="../img/add-task.svg">
+            <p>Add Task</p>
+            </a>
+
+            <a href="../board/board.html">
+            <img src="../img/board.svg">
+            <p>Board</p>
+            </a>
+
+            <a href="../contacts/contacts.html">
+            <img src="../img/contacts.svg">
+            <p>Contacts</p>
+            </a>
+
+        </div>
+
+        <div class="nav-rights">
+            <a href="../privacy policy/privacy.html">
+                <p>Privacy Policy</p>
+            </a>
+            <a href="../legal notice/legalnotice.html">
+                <p>Legal Notice</p>
+            </a>
+
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="contact-div">
+
+            <div onclick="addNewContact()" class="add-contact-btn">
+                <p>Add new contact</p>
+                <img src="../img/person_add.svg">
+            </div>
+
+            <section id="letter-sec-A" class="letter-sec d-none">
+                <p>A</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+
+                <div id="render-sec-A">
+
+                </div>
+            </section>
+            
+
+            <section id="letter-sec-B" class="letter-sec d-none">
+                <p>B</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-B">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-C" class="letter-sec d-none">
+                <p>C</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-C">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-D" class="letter-sec d-none">
+                <p>D</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-D">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-E" class="letter-sec d-none">
+                <p>E</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-E">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-F" class="letter-sec d-none">
+                <p>F</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-F">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-G" class="letter-sec d-none">
+                <p>G</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-G">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-H" class="letter-sec d-none">
+                <p>H</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-H">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-I" class="letter-sec d-none">
+                <p>I</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-I">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-J" class="letter-sec d-none">
+                <p>J</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-J">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-K" class="letter-sec d-none">
+                <p>K</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-K">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-L" class="letter-sec d-none">
+                <p>L</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-L">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-M" class="letter-sec d-none">
+                <p>M</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-M">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-N" class="letter-sec d-none">
+                <p>N</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-N">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-O" class="letter-sec d-none">
+                <p>O</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-O">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-P" class="letter-sec d-none">
+                <p>P</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-P">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-Q" class="letter-sec d-none">
+                <p>Q</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-Q">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-R" class="letter-sec d-none">
+                <p>R</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-R">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-S" class="letter-sec d-none">
+                <p>S</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-S">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-T" class="letter-sec d-none">
+                <p>T</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-T">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-U" class="letter-sec d-none">
+                <p>U</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-U">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-V" class="letter-sec d-none">
+                <p>V</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-V">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-W" class="letter-sec d-none">
+                <p>W</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-W">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-X" class="letter-sec d-none">
+                <p>X</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-X">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-Y" class="letter-sec d-none">
+                <p>Y</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-Y">
+
+                </div>
+            </section>
+
+            <section id="letter-sec-Z" class="letter-sec d-none">
+                <p>Z</p>
+                <img class="line-horizontal" src="../img/line-horizontal.svg">
+                
+                <div id="render-sec-Z">
+
+                </div>
+            </section>
+
+        </div>
+
+
+
+        <div class="main-header">
+            <h1>Contacts</h1>
+            <img src="../img/delimiter-vertical-blue.svg">
+            <p>Better with a team</p>
+        </div>
+
+        
+        <div id="contact-overview" class="contact-overview">
+            <!-- render new contact -->
+        </div>
+
+
+        <div class="show-succes">
+            Contact succesfully created 
+        </div>
+
+        <div id="popup-new-contact" class="popup-new-contact">
+            <!--  -->
+        </div>
+
+        <div id="popup-edit" class="popup-edit">
+            <!--  -->
+        </div>
+    </main>
+
+    
+    <script src="../index/index.js"></script>
+    <script src="../script.js" defer></script>
+    <script src="../contacts/contact.js"></script>
+    <script src="../contacts/contact-template.js"></script>
+    <script src="../sign up/register.js"></script>
+
+    
+
+
+    </body>

@@ -1,0 +1,30 @@
+.legal-wrapper {
+    margin-left: 270px;
+    margin-top: 120px;
+}
+
+.marked {
+    color: #29ABE2;
+}
+
+.nav-login {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: 232px;
+}
+.nav-login:hover {
+    background: #2A3D59;
+    cursor: pointer;
+}
+.nav-login img {
+    width: 26px;
+    height: 26px;
+}
+.nav-login p {
+    color: #CDCDCD;
+    font-size: 16px;
+    font-weight: 400;
+}

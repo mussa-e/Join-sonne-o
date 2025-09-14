@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../index/index.css">
+
+    
+</head>
+<body onload="initUsers()">
+    
+
+    <div class="start-logo">
+        <img src="../img/join-logo-blue.svg">
+    </div>
+
+
+    <main class="main-content">
+
+        <div class="login-header-wrapper">
+            <div class="login-header">
+                <p>Not a Join user?</p>
+                <a href="../sign up/signup.html"><button>Sign up</button></a>
+            </div>
+        </div>
+
+
+        <div class="login-container">
+            <h1>Log in</h1>
+            <div class="underline-blue">
+                <img src="../img/underline_blue.svg">
+            </div>
+            
+            <form>
+                
+                <div class="input-wrapper">
+                    <input id="email" type="email" placeholder="Email">
+                    <span class="icon">
+                        <img src="../img/email.svg">
+                    </span>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="password" type="password" placeholder="Password" autocomplete="current-password" aria-describedby="pw-help">
+                    <p id="pw-help" class="required d-none">Check your email and password.Please try again.</p>
+                    <span class="icon" id="togglePassword" aria-label="Passwort anzeigen" aria-pressed="false">
+                        <img id="passwordIcon" src="../img/password.svg">
+                    </span>
+                    
+                    
+                </div>
+            </form>
+
+            <div class="button-div">
+                <button onclick="logIn()" class="login-btn" type="submit">Log in</button>
+                <button onclick="guestLogin()" class="guest-btn" type="button">Guest Log in</button>
+            </div>
+        </div>
+
+        
+        
+    </main>
+
+    <div class="footer-rights">
+            <a href="../external/external-privacy.html"><p>Privacy Policy</p></a>
+            <a href="../external/external-legal.html"><p>Legal notice</p></a>
+        </div>
+
+
+    
+    <script src="../index/index.js"></script>
+    <script src="../summary/summary.js"></script>
+    <script src="../sign up/register.js"></script>
+    <script src="../index/formvalidationlogin.js"></script>
+    <script src="../script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../add-task/add-task.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../summary/summary.css">
+
+    
+
+    
+</head>
+<body onload="initUsers(), greet()">
+
+    <header>
+        <div class="header-under">
+            <p>Kanban Project Management Tool</p>
+            
+            <div class="header-right">
+            <a href="../help/help.html">
+                <img class="help-img" src="../img/help.svg">
+            </a>
+            <a class="initials-wrapper" onclick="openSubmenu(event)" href="#">
+                <img id="elipse-img" class="elipse-img" src="../img/Ellipse 3.svg">
+                <p id="initials" class="initials"></p>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="submenu flex" id="submenu">
+        <a href="../legal notice/legalnotice.html">Legal Notice</a>
+        <a href="../privacy policy/privacy.html">Privacy</a>
+        <a onclick="logOut()" href="../index/index.html">Log out</a>
+    </div>
+
+    <nav>
+
+        <img class="nav-logo" src="../img/join-logo-white.svg">
+
+        <div class="nav-links">
+            <a href="../summary/summary.html">
+            <img src="../img/summary.svg">
+            <p>Summary</p>
+            </a>
+
+            <a href="../add-task/add-task.html">
+            <img src="../img/add-task.svg">
+            <p>Add Task</p>
+            </a>
+
+            <a href="../board/board.html">
+            <img src="../img/board.svg">
+            <p>Board</p>
+            </a>
+
+            <a href="../contacts/contacts.html">
+            <img src="../img/contacts.svg">
+            <p>Contacts</p>
+            </a>
+
+        </div>
+
+        <div class="nav-rights">
+            <a href="../privacy policy/privacy.html">
+                <p>Privacy Policy</p>
+            </a>
+            <a href="../legal notice/legalnotice.html">
+                <p>Legal Notice</p>
+            </a>
+
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="summary-header">
+            <p class="p-left">Join 360</p>
+            <img src="../img/delimiter-vertical-blue.svg">
+            <p class="p-right">Key Metrics at a Glance</p>
+        </div>
+
+
+
+        <div class="summary-counter">
+
+            
+                <div class="box-upper">
+                    <div onclick="summaryToBoard()" class="box-upper-left">
+                        <img src="../img/pencil.svg">
+                    <div class="box-upper-text">
+                        0<span>To-Do</span>
+                    </div>
+                </div>
+            
+
+            
+                <div onclick="summaryToBoard()" class="box-upper-right">
+                    <img src="../img/hook59.svg">
+                    <div class="box-upper-text">
+                        0<span>Done</span>
+                    </div>
+                
+                </div>
+            
+            </div>
+
+
+            
+            <div onclick="summaryToBoard()" class="box-middle">
+                <img src="../img/urgentSymbol.svg">
+                <div class="box-middle-text">
+                    0<span>Urgent</span>
+                </div>
+                <img class="box-middle-delimiter" src="../img/delimiter-vertical.svg">
+                <div>
+                    <p class="date">date</p>
+                    <p class="upcoming">Upcoming deadline</p>
+                </div>
+                
+            </div>
+            
+
+
+
+            <div class="box-lower">
+                <div onclick="summaryToBoard()" class="box-lower-content">
+                    <p class="box-lower-content-num">0</p>
+                    <p class="box-lower-content-text">Tasks in<br> Board</p>
+                </div>
+
+                <div onclick="summaryToBoard()" class="box-lower-content">
+                    <p class="box-lower-content-num">0</p>
+                    <p class="box-lower-content-text">Tasks in<br> Progress</p>
+                </div>
+
+                <div onclick="summaryToBoard()" class="box-lower-content">
+                    <p class="box-lower-content-num">0</p>
+                    <p class="box-lower-content-text">Awaiting<br> Feedback</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="greeting">
+            <p id="greeting-time" class="greeting-time"></p>
+            <p id="greeting-name" class="greeting-name d-none"></p>
+        </div>
+
+
+
+
+    </main>
+    
+    
+    <script src="../index/index.js"></script>
+    <script src="../summary/summary.js"></script>
+    <script src="../script.js"></script>
+    <script src="../sign up/register.js" defer></script>
+    
+        
+    </body>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../add-task/add-task.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../board/board.css" />
+    <link rel="stylesheet" href="../board/add-task-template.css" />
+    <link rel="stylesheet" href="../add-task/select.css">
+  
+  </head>
+  <body>
+    <header>
+        <div class="header-under">
+            <p>Kanban Project Management Tool</p>
+            
+            <div class="header-right">
+            <a href="../help/help.html">
+                <img class="help-img" src="../img/help.svg">
+            </a>
+            <a class="initials-wrapper" onclick="openSubmenu(event)" href="#">
+                <img id="elipse-img" class="elipse-img" src="../img/Ellipse 3.svg">
+                <p id="initials" class="initials"></p>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="submenu flex" id="submenu">
+      <a href="../legal notice/legalnotice.html">Legal Notice</a>
+      <a href="../privacy policy/privacy.html">Privacy</a>
+      <a onclick="logOut()" href="../index/index.html">Log out</a>
+    </div>
+
+    <nav>
+      <img class="nav-logo" src="../img/join-logo-white.svg" />
+
+      <div class="nav-links">
+        <a href="../summary/summary.html">
+          <img src="../img/summary.svg" />
+          <p>Summary</p>
+        </a>
+
+        <a href="../add-task/add-task.html">
+          <img src="../img/add-task.svg" />
+          <p>Add Task</p>
+        </a>
+
+        <a href="../board/board.html">
+          <img src="../img/board.svg" />
+          <p>Board</p>
+        </a>
+
+        <a href="../contacts/contacts.html">
+          <img src="../img/contacts.svg" />
+          <p>Contacts</p>
+        </a>
+      </div>
+
+      <div class="nav-rights">
+        <a href="../privacy policy/privacy.html">
+          <p>Privacy Policy</p>
+        </a>
+        <a href="../legal notice/legalnotice.html">
+          <p>Legal Notice</p>
+        </a>
+      </div>
+    </nav>
+
+    <div class="board-header-wrapper">
+      <div class="board-header">
+        <h1>Board</h1>
+
+        <div class="board-header-right">
+          <input type="text" placeholder="Find Task" />
+          <img class="search-glas" src="../img/magnifying-glass.svg" />
+          <button onclick="addTask()" class="add-task-btn">
+            Add Task <img src="../img/plus-icon.svg" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- here begins the popup -->
+    <div class="add-task-popup" id="add-task-popup">
+      <main>
+        <div class="popup-header">
+          <h1>Add Task</h1>
+          <img onclick="closePopup()" src="../img/close-icon.svg" />
+        </div>
+
+        <div class="input-container">
+          <section class="input-section-left">
+            <label for="task-title"
+              >Title<span class="requiredStar">*</span></label
+            >
+            <input id="title-temp" type="text" placeholder="Enter a title" />
+            <p class="required d-none">This field is required</p>
+            <label for="">Description</label>
+            <textarea
+              rows="5"
+              id="task-description"
+              placeholder="Enter a description"
+            ></textarea>
+            <label for="date"
+              >Due Date<span class="requiredStar">*</span></label
+            >
+            <input id="date-temp" type="date" />
+            <p class="required d-none">This field is required</p>
+          </section>
+
+          <div class="line"></div>
+
+          <div class="input-section-right">
+            <label for="prio">Priority</label>
+            <section class="priority-section">
+              <button data-priority="urgent" type="button">
+                Urgent<img src="../img/urgent.svg" />
+              </button>
+
+              <button data-priority="medium" type="button">
+                Medium<img src="../img/medium.svg" />
+              </button>
+
+              <button data-priority="low" type="button">
+                Low<img src="../img/low.svg" />
+              </button>
+            </section>
+
+
+            <!-- <label for="contactSelection">Assigned to</label>
+            <select required tabindex="0">
+              <option value="" disabled selected hidden>
+                Select contacts to assign
+              </option>
+            </select> -->
+            <label for="contactSelection">Assigned to</label>
+                    <div class="custom-select">
+                        <input id="assign-input" class="select-trigger assign-input" placeholder="Select contacts to assign">
+                        <img class="assign-img" src="../img/arrow_drop_downaa.svg"> 
+                            
+                        
+                        <ul class="options options-assigned-to" id="contactSelection">
+                            <!--  -->
+                        </ul>
+                        <div id="assigned-symbols" class="assigned-symbols">
+                            <!-- assigned -->
+                        </div>
+                    </div>
+
+
+
+
+            <!-- <label for="category"
+              >Category<span class="requiredStar">*</span></label
+            >
+            <select id="category-temp" tabindex="0">
+              <option value="" disabled selected hidden>
+                Select Task Category
+              </option>
+              <option value="Technical Task">Technical Task</option>
+              <option value="User Story">User Story</option>
+            </select> -->
+            <label for="category">Category<span class="requiredStar">*</span></label>
+                    <div class="custom-select" id="category">
+                        <button type="button" class="select-trigger">
+                            Select Task Category <img src="../img/arrow_drop_downaa.svg">
+                        </button>
+                        <ul class="options">
+                            <li data-value="Technical Task">Technical Task</li>
+                            <li data-value="User Story">User Story</li>
+                        </ul>
+                        </div>
+
+            <p class="required d-none">This field is required</p>
+
+
+            <label for="subtask">Subtask</label>
+                    <div class="subtask-wrapper">
+                        <input id="subtask" class="subtask subtask-temp-width" type="text" placeholder="Enter new subtask">
+                            <span class="subtask-icon">
+                                <img onmousedown="clearSubtask()" class="x" src="../img/x2.svg">
+                                <img class="delimiter" src="../img/delimiter-vertical.svg">
+                                <img onmousedown="renderSubtask()" class="hook" src="../img/hook-dark.svg">
+                            </span>
+                    </div>
+                    <ul class="ul-div" id="subtask-list-1" class="subtask-list">
+                    </ul>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="footer-left">
+            <p class="requiredStar">*</p>
+            <p>This field is required</p>
+          </div>
+
+          <div class="footer-buttons-section">
+            <button class="clear-btn" type="reset">
+              Clear<img src="../img/x.svg" />
+            </button>
+            <button onclick="createTaskTemplate()" class="create-task-btn">
+              Create Task<img src="../img/doneSymbol.svg" />
+            </button>
+          </div>
+        </div>
+
+        <div class="report" id="report">
+          Task added to board <img src="../img/board.svg" />
+        </div>
+      </main>
+    </div>
+    <!-- here ends the popup -->
+
+    <div class="schedule-wrapper">
+
+      <section class="schedule-section">
+        <div class="schedule-header">
+          <h2>To Do</h2>
+          <img onclick="addTask()" src="../img/plus-button.svg" />
+        </div>
+
+        <div class="task-container">
+          <div id="placeholder-1" class="placeholder">
+            <p>No task To do</p>
+          </div>
+          <div class="task-div d-none" id="todo">
+            <!-- task -->
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule-section">
+        <div class="schedule-header">
+          <h2>In Progress</h2>
+          <img onclick="addTask()" src="../img/plus-button.svg" />
+        </div>
+
+        <div class="task-container">
+          <div id="placeholder-2" class="placeholder">
+            <p>No task To do</p>
+          </div>
+          <div class="task-div d-none" id="progress">
+            <!-- task -->
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule-section">
+        <div class="schedule-header">
+          <h2>Await feedback</h2>
+          <img onclick="addTask()" src="../img/plus-button.svg" />
+        </div>
+
+        <div class="task-container">
+          <div id="placeholder-3" class="placeholder">
+            <p>No task To do</p>
+          </div>
+          <div class="task-div d-none" id="feedback">
+            <!-- task -->
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule-section">
+        <div class="schedule-header">
+          <h2>Done</h2>
+        </div>
+
+        <div class="task-container">
+          <div id="placeholder-4" class="placeholder">
+            <p>No task To do</p>
+          </div>
+          <div class="task-div d-none" id="done">
+            <!-- task -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../add-task/add-task.js"></script>
+    <script src="../board/add-task-template.js"></script>
+    <script src="../index/index.js"></script>
+    <script src="../script.js"></script>
+    <script src="../add-task/render-task.js"></script>
+    <script src="../board/board.js"></script>
+    <script src="../sign up/register.js"></script>
+    <script src="../add-task/subtask.js"></script>
+    <script src="../contacts/contact.js"></script>
+    <script src="../add-task/select.js"></script>
+  </body>
+</html>

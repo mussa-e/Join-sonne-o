@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../sign up/signup.css">
+
+    
+</head>
+<body>
+    
+
+    <div class="start-logo">
+        <img src="../img/join-logo-blue.svg">
+    </div>
+
+
+    <main class="main-content">
+
+        
+
+        <div class="login-container">
+            <a href="../index/index.html"><img class="sign-up-back" src="../img/blueBackArrow.svg"></a>
+            <h1>Sign up</h1>
+            
+            <div class="underline-blue">
+                <img src="../img/underline_blue.svg">
+            </div>
+            
+
+            <form>
+                <div class="input-wrapper">
+                    <input id="name-SignUp" type="text" placeholder="Name">
+                    <span class="icon">
+                        <img src="../img/person.svg">
+                    </span>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="email-SignUp" type="email" placeholder="Email">
+                    <p class="required d-none">Check your email and password.Please try again.</p>
+                    <span class="icon">
+                        <img src="../img/email.svg">
+                    </span>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="password-SignUp" type="password" placeholder="Password">
+                    <span class="icon toggle-password">
+                        <img src="../img/password.svg">
+                    </span>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="confirmPassword-SignUp" type="password" placeholder="Confirm Password">
+                    <p class="required d-none">Your password dont match. Please try again.</p>
+                    <span class="icon toggle-password"">
+                        <img src="../img/password.svg">
+                    </span>
+                </div>
+
+                <div class="checkbox">
+                    <input id="accept" type="checkbox">
+                    <label>I accept the <a href="../privacy policy/privacy.html">Privacy Policy</a></label>
+                </div>
+            </form>
+
+            <div class="button-div">
+                <button onclick="signUp()" class="sign-up-btn d-none" type="submit">Sign up</button>
+                
+            </div>
+        </div>
+
+        
+        
+    </main>
+
+
+    <div class="Msg-Box report" id="Msg-Box">
+        You Signed Up successfully
+    </div>
+
+
+    <div class="footer-rights">
+            <a href="../external/external-privacy.html"><p>Privacy Policy</p></a>
+            <a href="../external/external-legal.html"><p>Legal notice</p></a>
+        </div>
+
+
+    
+    <script src="../index/index.js"></script>
+    <script src="../summary/summary.js"></script>
+    <script src="../sign up/signup.js"></script>
+    <script src="../sign up/register.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
