@@ -28,12 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function createTask() {
-    formValidationAddTask();
+    if (!formValidationAddTask()) return;
     
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
     const dueDate = document.getElementById("date").value;
-    const category = document.getElementById("Category").value;
+    const category = document.getElementById("category").value;
     const subtask = document.getElementById("subtask").value.trim();
     const selectedPriority = document.querySelector(".priority-section button.active");
     const priority = selectedPriority ? selectedPriority.dataset.priority : "medium";
@@ -55,27 +55,47 @@ async function createTask() {
 }
 
 
+const categoryDiv = document.getElementById("category");
+const trigger = categoryDiv.querySelector(".select-trigger");
+const options = categoryDiv.querySelectorAll(".options li");
+const hiddenInput = document.getElementById("categoryValue");
+
+options.forEach(opt => {
+  opt.addEventListener("click", () => {
+    // Button-Text updaten
+    trigger.innerHTML = `${opt.textContent} <img src="../img/arrow_drop_downaa.svg">`;
+    // Hidden-Input setzen
+    hiddenInput.value = opt.dataset.value;
+  });
+});
+
+
+
+
 function formValidationAddTask() {
     const title = document.getElementById("title").value;
     const dueDate = document.getElementById("date").value;
-    const category = document.getElementById("Category").value;
+    const category = document.getElementById("categoryValue").value; // <-- hidden input
     
     if (title === "" || dueDate === "" || category === "") {
         displayRequiredMessage();
-        return;
+        return false;
     }
-    // showReportAddedTask();
+    return true;
 }
 
-function displayRequiredMessage() {{
+
+function displayRequiredMessage() {
     const titleInput = document.getElementById("title");
     const dateInput = document.getElementById("date");
-    const categorySelect = document.getElementById("Category");
+    const categoryInput = document.getElementById("categoryValue");
+    const categoryDiv = document.getElementById("category");
 
     const titleMessage = titleInput.nextElementSibling;
     const dateMessage = dateInput.nextElementSibling;
-    const categoryMessage = categorySelect.nextElementSibling;
+    const categoryMessage = categoryDiv.nextElementSibling;
 
+    // Titel
     if (titleInput.value === "") {
         titleMessage.classList.remove("d-none");
         titleInput.classList.add("input-error");
@@ -84,6 +104,7 @@ function displayRequiredMessage() {{
         titleInput.classList.remove("input-error");
     }
 
+    // Datum
     if (dateInput.value === "") {
         dateMessage.classList.remove("d-none");
         dateInput.classList.add("input-error");
@@ -92,14 +113,16 @@ function displayRequiredMessage() {{
         dateInput.classList.remove("input-error");
     }
 
-    if (categorySelect.value === "") {
+    // Kategorie (prüfen auf hidden input)
+    if (categoryInput.value === "") {
         categoryMessage.classList.remove("d-none");
-        categorySelect.classList.add("input-error");
+        categoryDiv.classList.add("input-error");
     } else {
         categoryMessage.classList.add("d-none");
-        categorySelect.classList.remove("input-error");
+        categoryDiv.classList.remove("input-error");
     }
-}}
+}
+
 
 
 function showReportAddedTask() {
