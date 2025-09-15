@@ -21,7 +21,7 @@ function initPriorityButtons() {
     });
 }
 
-// beim Laden initialisieren
+
 document.addEventListener("DOMContentLoaded", () => {
     initPriorityButtons();
 });
