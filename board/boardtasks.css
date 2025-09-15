@@ -1,0 +1,16 @@
+.task-avatar{
+  margin-left: -16px;
+  position: relative;
+  z-index: 0;
+}
+.task-avatar:first-child {
+  margin-left: 0;
+}
+
+.task-avatar:nth-child(n) {
+  z-index: auto;
+}
+
+.task-avatar:nth-child(n+1) {
+  z-index: 1;
+}

@@ -33,18 +33,23 @@ async function createTask() {
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
     const dueDate = document.getElementById("date").value;
-    const category = document.getElementById("category").value;
-    const subtask = document.getElementById("subtask").value.trim();
+
     const selectedPriority = document.querySelector(".priority-section button.active");
     const priority = selectedPriority ? selectedPriority.dataset.priority : "medium";
+    const assigned = [...selectedContacts]; 
+    const category = document.getElementById("categoryValue").value;
+    const subtaskEls = document.querySelectorAll("#subtask-list-1 p");
+    const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
+    
 
     const task = {
         title,
         description,
         dueDate,
-        category,
-        subtask,
         priority,
+        assigned,
+        category,
+        subtasks,
         status: "todo"
     };
 
@@ -54,7 +59,7 @@ async function createTask() {
     showReportAddedTask();
 }
 
-
+//this is for formvalidation
 const categoryDiv = document.getElementById("category");
 const trigger = categoryDiv.querySelector(".select-trigger");
 const options = categoryDiv.querySelectorAll(".options li");
@@ -68,8 +73,6 @@ options.forEach(opt => {
     hiddenInput.value = opt.dataset.value;
   });
 });
-
-
 
 
 function formValidationAddTask() {
@@ -95,7 +98,6 @@ function displayRequiredMessage() {
     const dateMessage = dateInput.nextElementSibling;
     const categoryMessage = categoryDiv.nextElementSibling;
 
-    // Titel
     if (titleInput.value === "") {
         titleMessage.classList.remove("d-none");
         titleInput.classList.add("input-error");
@@ -104,7 +106,6 @@ function displayRequiredMessage() {
         titleInput.classList.remove("input-error");
     }
 
-    // Datum
     if (dateInput.value === "") {
         dateMessage.classList.remove("d-none");
         dateInput.classList.add("input-error");
@@ -113,7 +114,6 @@ function displayRequiredMessage() {
         dateInput.classList.remove("input-error");
     }
 
-    // Kategorie (prüfen auf hidden input)
     if (categoryInput.value === "") {
         categoryMessage.classList.remove("d-none");
         categoryDiv.classList.add("input-error");
