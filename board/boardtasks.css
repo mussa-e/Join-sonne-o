@@ -14,3 +14,35 @@
 .task-avatar:nth-child(n+1) {
   z-index: 1;
 }
+
+.board-task-subtask{
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.board-task-subtask-beam{
+  width: 100px;
+  height: 8px;
+  top: 4px;
+  gap: 10px;
+  opacity: 1;
+  border-radius: 8px;
+  display: flex;
+  background: #F4F4F4;
+
+
+}
+.board-task-subtask-numb{
+
+}
+
+.prio-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.prio-img{
+  margin-left: 70px;
+}
+
+
