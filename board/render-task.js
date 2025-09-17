@@ -13,8 +13,6 @@ function renderTasktoBoard(task, id) {
         `<div class="assigned-symbol task-avatar" style="background-color:${c.color}">${c.init}</div>`
       ).join("")}</div>` : "";
 
-  // const subtaskHTML = task.subtasks?.length
-  //   ? `<ul>${task.subtasks.map(st => `<li>${st}</li>`).join("")}</ul>` : "";
       const subtaskHTML = task.subtasks && Object.keys(task.subtasks).length
   ? `<ul>${Object.values(task.subtasks).map(st => `<li>${st}</li>`).join("")}</ul>` 
   : "";
@@ -26,8 +24,8 @@ function renderTasktoBoard(task, id) {
       <h3>${task.title}</h3>
       <p class="description">${task.description}</p>
 
-      <div id="board-task-subtask" class="board-task-subtask">
-        <p class="board-task-subtask-beam"></p>
+      <div id="board-task-subtask-${id}" class="board-task-subtask">
+        <p id="beam-${id}" class="board-task-subtask-beam"></p>
         <p id="board-task-subtask-numb" class="board-task-subtask-numb">${task.subtasks?.length}/2 Subtasks</p>
       </div>
       
@@ -39,6 +37,8 @@ function renderTasktoBoard(task, id) {
       
     </div>`;
 
+    
+
 
   const column = document.getElementById(task.status);
   if (column) {
@@ -47,12 +47,13 @@ function renderTasktoBoard(task, id) {
     document.getElementById(`placeholder-${["todo","progress","feedback","done"].indexOf(task.status)+1}`).classList.add("d-none");
   }
 
-  subtasksAvailable(task);
+  subtasksAvailable(task, id);
+  checkSubtaskBeam(task,id);
 }
 
 
-function subtasksAvailable(task) {
-  let subtaskDiv = document.getElementById("board-task-subtask");
+function subtasksAvailable(task,id) {
+  let subtaskDiv = document.getElementById(`board-task-subtask-${id}`);
 
   if (task.subtasks?.length > 0) {
     subtaskDiv.style.display = "flex";
@@ -61,3 +62,14 @@ function subtasksAvailable(task) {
   }
 }
 
+function checkSubtaskBeam(task, id) {
+  const beamRef = document.getElementById(`beam-${id}`);
+
+  beamRef.classList.remove("half", "full");
+
+  if (task.subtasks?.length === 1) {
+    beamRef.classList.add("half");
+  } else if (task.subtasks?.length === 2) {
+    beamRef.classList.add("full");
+  }
+}

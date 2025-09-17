@@ -29,9 +29,29 @@
   border-radius: 8px;
   display: flex;
   background: #F4F4F4;
-
-
+  position: relative;
+  overflow: hidden;
 }
+.board-task-subtask-beam::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #4589ff;
+  width: 0;
+  transition: width 0.3s ease;
+  border-radius: 8px;
+}
+
+.board-task-subtask-beam.half::after {
+  width: 50%;
+}
+
+.board-task-subtask-beam.full::after {
+  width: 100%;
+}
+
 .board-task-subtask-numb{
 
 }
@@ -39,10 +59,10 @@
 .prio-wrapper{
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .prio-img{
-  margin-left: 70px;
+  position: absolute;
+  left: 480px;
 }
 
 
