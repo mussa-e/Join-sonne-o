@@ -59,20 +59,21 @@ async function createTask() {
     showReportAddedTask();
 }
 
-//this is for formvalidation
-const categoryDiv = document.getElementById("category");
-const trigger = categoryDiv.querySelector(".select-trigger");
-const options = categoryDiv.querySelectorAll(".options li");
-const hiddenInput = document.getElementById("categoryValue");
 
-options.forEach(opt => {
-  opt.addEventListener("click", () => {
-    // Button-Text updaten
-    trigger.innerHTML = `${opt.textContent} <img src="../img/arrow_drop_downaa.svg">`;
-    // Hidden-Input setzen
-    hiddenInput.value = opt.dataset.value;
+const categoryDiv = document.getElementById("category");
+if (categoryDiv) {
+  const trigger = categoryDiv.querySelector(".select-trigger");
+  const options = categoryDiv.querySelectorAll(".options li");
+  const hiddenInput = document.getElementById("categoryValue");
+
+  options.forEach(opt => {
+    opt.addEventListener("click", () => {
+      trigger.innerHTML = `${opt.textContent} <img src="../img/arrow_drop_downaa.svg">`;
+      hiddenInput.value = opt.dataset.value;
+    });
   });
-});
+}
+
 
 
 function formValidationAddTask() {

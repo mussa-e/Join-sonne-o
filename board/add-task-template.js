@@ -10,20 +10,39 @@ function closePopup() {
 }
 
 
-function createTaskTemplate() {
+async function createTaskTemplate() {
     formValidationAddTaskTemp();
 
+    const title = document.getElementById("title-temp").value.trim();
+    const description = document.getElementById("description-temp").value.trim();
+    const dueDate = document.getElementById("date-temp").value;
+
+    const selectedPriority = document.querySelector(".priority-section button.active");
+    const priority = selectedPriority ? selectedPriority.dataset.priority : "medium";
+    const assigned = [...selectedContacts]; 
+    const category = document.getElementById("categoryValue-temp").value;
+    const subtaskEls = document.querySelectorAll("#subtask-list-1 p");
+    const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
     
+
+    const task = {
+        title,
+        description,
+        dueDate,
+        priority,
+        assigned,
+        category,
+        subtasks,
+        status: "todo"
+    };
+
+    await postData("tasks", task);
+
+    location.reload();
 }
 
 
-document.querySelectorAll("#category-temp .options li").forEach(option => {
-    option.addEventListener("click", function() {
-        const selectTrigger = document.querySelector("#category-temp .select-trigger");
-        selectTrigger.textContent = this.textContent; // Zeige Auswahl im Button
-        document.getElementById("category-temp").setAttribute("data-value", this.dataset.value);
-    });
-});
+
 
 
 function formValidationAddTaskTemp() {
@@ -85,3 +104,22 @@ function showReportAddedTaskTemplate() {
       }, 1000);
     }
 
+
+document.querySelectorAll("#category-temp .options li").forEach(option => {
+    option.addEventListener("click", function() {
+        const selectTrigger = document.querySelector("#category-temp .select-trigger");
+        selectTrigger.textContent = this.textContent; // Zeige Auswahl im Button
+        document.getElementById("category-temp").setAttribute("data-value", this.dataset.value);
+    });
+});
+
+
+document.querySelectorAll("#category-temp .options li").forEach(li => {
+    li.addEventListener("click", () => {
+        const hiddenInput = document.getElementById("categoryValue-temp");
+        hiddenInput.value = li.dataset.value;
+        document.querySelector("#category-temp .select-trigger").innerHTML = `
+            ${li.textContent} <img src="../img/arrow_drop_downaa.svg">
+        `;
+    });
+});

@@ -95,27 +95,30 @@
 
         <div class="input-container">
           <section class="input-section-left">
-            <label for="task-title"
-              >Title<span class="requiredStar">*</span></label
-            >
+            <label for="task-title">
+              Title<span class="requiredStar">*</span>
+            </label>
             <input id="title-temp" type="text" placeholder="Enter a title" />
             <p class="required d-none">This field is required</p>
+
             <label for="">Description</label>
             <textarea
               rows="5"
-              id="task-description"
+              id="description-temp"
               placeholder="Enter a description"
             ></textarea>
-            <label for="date"
-              >Due Date<span class="requiredStar">*</span></label
-            >
-            <input id="date-temp" type="date" />
+
+            <label for="date">
+              Due Date<span class="requiredStar">*</span>
+              </label>
+            <input id="date-temp" type="date"/>
             <p class="required d-none">This field is required</p>
           </section>
 
           <div class="line"></div>
 
           <div class="input-section-right">
+
             <label for="prio">Priority</label>
             <section class="priority-section">
               <button data-priority="urgent" type="button">
@@ -155,6 +158,7 @@
                             <li data-value="Technical Task">Technical Task</li>
                             <li data-value="User Story">User Story</li>
                         </ul>
+                        <input type="hidden" id="categoryValue-temp" name="category" class="hidden-input"> 
                         </div>
             <p class="required d-none">This field is required</p>
 
@@ -263,7 +267,7 @@
       </section>
     </div>
 
-    <!-- <script src="../add-task/add-task.js"></script> -->
+    
     <script src="../board/add-task-template.js"></script>
     <script src="../index/index.js"></script>
     <script src="../script.js"></script>
@@ -273,6 +277,7 @@
     <script src="../add-task/subtask.js"></script>
     <script src="../contacts/contact.js"></script>
     <script src="../add-task/select.js"></script>
+    <script src="../add-task/add-task.js" defer></script>
   </body>
 
 

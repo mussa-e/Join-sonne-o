@@ -9,7 +9,7 @@ const prioImage = {
 function renderTasktoBoard(task, id) {
 
   const assignedHTML = task.assigned?.length
-    ? `<div class="assigned-symbols">${task.assigned.map(c =>
+    ? `<div class="assigned-symbols pa">${task.assigned.map(c =>
         `<div class="assigned-symbol task-avatar" style="background-color:${c.color}">${c.init}</div>`
       ).join("")}</div>` : "";
 

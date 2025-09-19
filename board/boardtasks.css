@@ -20,6 +20,9 @@
   align-items: center;
   gap: 8px;
 }
+.pa{
+  position: absolute;
+}
 .board-task-subtask-beam{
   width: 100px;
   height: 8px;
@@ -59,10 +62,8 @@
 .prio-wrapper{
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.prio-img{
-  position: absolute;
-  left: 480px;
-}
+
 
 
