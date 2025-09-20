@@ -73,7 +73,7 @@ function resetPlaceholders() {
 }
 
 
-function checkEmptyColumns() {
+function checkEmptyColumns() { 
   ["todo","progress","feedback","done"].forEach((status, index) => {
     const column = document.getElementById(status);
     const placeholder = document.getElementById(`placeholder-${index+1}`);
