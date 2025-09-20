@@ -76,14 +76,15 @@
         <h1>Board</h1>
 
         <div class="board-header-right">
-          <input type="text" placeholder="Find Task" />
+          <input id="find-task" type="text" placeholder="Find Task" />
           <img class="search-glas" src="../img/magnifying-glass.svg" />
-          <button onclick="addTask()" class="add-task-btn">
+          <button onclick="addTask('todo')" class="add-task-btn">
             Add Task <img src="../img/plus-icon.svg" />
           </button>
         </div>
       </div>
     </div>
+    <p id="no-result" class="no-result"></p>
 
     <!-- here begins the popup -->
     <div class="add-task-popup" id="add-task-popup">
@@ -166,7 +167,13 @@
 
             <label for="subtask">Subtask</label>
                     <div class="subtask-wrapper">
-                        <input id="subtask" class="subtask subtask-temp-width" type="text" placeholder="Enter new subtask">
+                        <input 
+                          id="subtask" 
+                          class="subtask subtask-temp-width" 
+                          type="text" 
+                          placeholder="Enter new subtask"
+                          onkeydown="if(event.key === 'Enter') renderSubtask()"
+                          >
                             <span class="subtask-icon">
                                 <img onmousedown="clearSubtask()" class="x" src="../img/x2.svg">
                                 <img class="delimiter" src="../img/delimiter-vertical.svg">
@@ -206,7 +213,7 @@
       <section class="schedule-section">
         <div class="schedule-header">
           <h2>To Do</h2>
-          <img onclick="addTask()" src="../img/plus-button.svg" />
+          <img onclick="addTask('todo')" src="../img/plus-button.svg" />
         </div>
 
         <div class="task-container">
@@ -222,7 +229,7 @@
       <section class="schedule-section">
         <div class="schedule-header">
           <h2>In Progress</h2>
-          <img onclick="addTask()" src="../img/plus-button.svg" />
+          <img onclick="addTask('progress')" src="../img/plus-button.svg" />
         </div>
 
         <div class="task-container">
@@ -238,7 +245,7 @@
       <section class="schedule-section">
         <div class="schedule-header">
           <h2>Await feedback</h2>
-          <img onclick="addTask()" src="../img/plus-button.svg" />
+          <img onclick="addTask('feedback')" src="../img/plus-button.svg" />
         </div>
 
         <div class="task-container">
@@ -278,6 +285,7 @@
     <script src="../contacts/contact.js"></script>
     <script src="../add-task/select.js"></script>
     <script src="../add-task/add-task.js" defer></script>
+    <script src="../board/search.js"></script>
   </body>
 
 

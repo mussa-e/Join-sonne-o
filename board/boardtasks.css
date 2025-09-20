@@ -66,4 +66,23 @@
 }
 
 
+.preview{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-result{
+  position: relative;
+  left: 50%;
+  top: 30%;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+
 

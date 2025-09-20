@@ -340,7 +340,7 @@ async function updateContact() {
     const email = document.getElementById("email-contact").value.trim();
     const phone = document.getElementById("phone-contact").value.trim();
 
-    if (!name || !email || !phone) {
+    if (name === "" || email === "" || phone === "") {
         displayRequiredMessageCreateContact();
         return;
     }

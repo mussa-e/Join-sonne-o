@@ -22,7 +22,7 @@ function renderTasktoBoard(task, id) {
     <div class="task-card" data-id="${id}">
       <p class="category">${task.category}</p>
       <h3>${task.title}</h3>
-      <p class="description">${task.description}</p>
+      <p class="description preview">${task.description}</p>
 
       <div id="board-task-subtask-${id}" class="board-task-subtask">
         <p id="beam-${id}" class="board-task-subtask-beam"></p>
@@ -45,7 +45,7 @@ function renderTasktoBoard(task, id) {
     column.classList.remove("d-none");
     column.insertAdjacentHTML("beforeend", taskHTML);
     document.getElementById(`placeholder-${["todo","progress","feedback","done"].indexOf(task.status)+1}`).classList.add("d-none");
-  }
+  } 
 
   subtasksAvailable(task, id);
   checkSubtaskBeam(task,id);

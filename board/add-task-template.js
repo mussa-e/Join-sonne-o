@@ -1,6 +1,10 @@
-function addTask() {
+let taskStatus;
+
+
+function addTask(stat) {
       const popup = document.getElementById("add-task-popup");
       popup.classList.add("show");
+      taskStatus = stat;
 }
 
 
@@ -33,7 +37,7 @@ async function createTaskTemplate() {
         assigned,
         category,
         subtasks,
-        status: "todo"
+        status: taskStatus
     };
 
     await postData("tasks", task);
