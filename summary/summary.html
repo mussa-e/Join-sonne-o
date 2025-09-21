@@ -89,10 +89,11 @@
 
             
                 <div class="box-upper">
+
                     <div onclick="summaryToBoard()" class="box-upper-left">
                         <img src="../img/pencil.svg">
-                    <div class="box-upper-text">
-                        0<span>To-Do</span>
+                    <div id="todo-sum" class="box-upper-text">
+                        <span>To-Do</span>
                     </div>
                 </div>
             
@@ -100,8 +101,8 @@
             
                 <div onclick="summaryToBoard()" class="box-upper-right">
                     <img src="../img/hook59.svg">
-                    <div class="box-upper-text">
-                        0<span>Done</span>
+                    <div id="done-sum" class="box-upper-text">
+                        <span>Done</span>
                     </div>
                 
                 </div>
@@ -113,11 +114,11 @@
             <div onclick="summaryToBoard()" class="box-middle">
                 <img src="../img/urgentSymbol.svg">
                 <div class="box-middle-text">
-                    0<span>Urgent</span>
+                    -<span>Urgent</span>
                 </div>
                 <img class="box-middle-delimiter" src="../img/delimiter-vertical.svg">
                 <div>
-                    <p class="date">date</p>
+                    <p class="date">month day, year</p>
                     <p class="upcoming">Upcoming deadline</p>
                 </div>
                 
@@ -128,17 +129,17 @@
 
             <div class="box-lower">
                 <div onclick="summaryToBoard()" class="box-lower-content">
-                    <p class="box-lower-content-num">0</p>
+                    <p id="total-sum" class="box-lower-content-num"></p>
                     <p class="box-lower-content-text">Tasks in<br> Board</p>
                 </div>
 
                 <div onclick="summaryToBoard()" class="box-lower-content">
-                    <p class="box-lower-content-num">0</p>
+                    <p id="progress-sum" class="box-lower-content-num"></p>
                     <p class="box-lower-content-text">Tasks in<br> Progress</p>
                 </div>
 
                 <div onclick="summaryToBoard()" class="box-lower-content">
-                    <p class="box-lower-content-num">0</p>
+                    <p id="feedback-sum" class="box-lower-content-num"></p>
                     <p class="box-lower-content-text">Awaiting<br> Feedback</p>
                 </div>
             </div>
