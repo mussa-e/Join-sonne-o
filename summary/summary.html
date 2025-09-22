@@ -92,17 +92,18 @@
 
                     <div onclick="summaryToBoard()" class="box-upper-left">
                         <img src="../img/pencil.svg">
-                    <div id="todo-sum" class="box-upper-text">
-                        <span>To-Do</span>
+                        <div id="todo-sum" class="box-upper-text">
+                            
+                        </div>
+                        
                     </div>
-                </div>
             
 
             
                 <div onclick="summaryToBoard()" class="box-upper-right">
                     <img src="../img/hook59.svg">
                     <div id="done-sum" class="box-upper-text">
-                        <span>Done</span>
+                        
                     </div>
                 
                 </div>
@@ -114,11 +115,12 @@
             <div onclick="summaryToBoard()" class="box-middle">
                 <img src="../img/urgentSymbol.svg">
                 <div class="box-middle-text">
-                    -<span>Urgent</span>
+                    <p id="count-urgent" class="count-urgent"></p>
+                    <span>Urgent</span>
                 </div>
                 <img class="box-middle-delimiter" src="../img/delimiter-vertical.svg">
                 <div>
-                    <p class="date">month day, year</p>
+                    <p id="date" class="date"></p>
                     <p class="upcoming">Upcoming deadline</p>
                 </div>
                 

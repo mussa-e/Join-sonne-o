@@ -71,9 +71,11 @@
 }
 
 
-.box-upper-left:hover .box-upper-text {
+.box-upper-left:hover .box-upper-text,
+.box-upper-left:hover .box-upper-text span {
     color: #FFFFFF;
 }
+
 
 .box-upper-left:hover img {
     content: url('../img/pencil-hover.svg');
@@ -90,8 +92,9 @@
 .box-upper-text span {
     font-weight: 400;
     font-size: 20px;
-    
+    color: #2A3647;
 }
+
 .box-upper-right {
     display: flex;
     align-items: center;
@@ -112,7 +115,8 @@
     transform: scale(1.1);
 }
 
-.box-upper-right:hover .box-upper-text {
+.box-upper-right:hover .box-upper-text,
+.box-upper-right:hover .box-upper-text span {
     color: #FFFFFF;
 }
 
@@ -156,8 +160,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+}
+.count-urgent{
     font-weight: 600;
     font-size: 64px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .box-middle-text span {
     font-weight: 400;
