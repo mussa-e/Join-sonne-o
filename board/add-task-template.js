@@ -15,7 +15,9 @@ function closePopup() {
 
 
 async function createTaskTemplate() {
-    formValidationAddTaskTemp();
+    if (!formValidationAddTaskTemp()) return;
+
+    showReportAddedTaskTemplate();
 
     const title = document.getElementById("title-temp").value.trim();
     const description = document.getElementById("description-temp").value.trim();
@@ -42,7 +44,9 @@ async function createTaskTemplate() {
 
     await postData("tasks", task);
 
-    location.reload();
+    setTimeout(()=>{
+        location.reload();
+    },500);
 }
 
 
@@ -56,10 +60,9 @@ function formValidationAddTaskTemp() {
 
     if (title === "" || dueDate === "" || !category) {
         displayRequiredMessageTemp();
-        return;
+        return false;
     }
-
-    showReportAddedTaskTemplate();
+    return true;
 }
 
 
@@ -106,7 +109,7 @@ function showReportAddedTaskTemplate() {
         popup.classList.remove("show");
         closePopup();
       }, 1000);
-    }
+}
 
 
 document.querySelectorAll("#category-temp .options li").forEach(option => {

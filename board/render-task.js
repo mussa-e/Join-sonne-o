@@ -19,7 +19,7 @@ function renderTasktoBoard(task, id) {
 
 
   const taskHTML = `
-    <div class="task-card" data-id="${id}">
+    <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}">
       <p class="category">${task.category}</p>
       <h3>${task.title}</h3>
       <p class="description preview">${task.description}</p>

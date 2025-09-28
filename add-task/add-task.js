@@ -137,6 +137,6 @@ function showReportAddedTask() {
       setTimeout(() => {
         popup.classList.remove("show");
       }, 1000);
-    }
+}
 
 
