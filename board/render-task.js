@@ -20,7 +20,7 @@ function renderTasktoBoard(task, id) {
 
   const taskHTML = `
     <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}">
-      <p class="category">${task.category}</p>
+      <p class="category ${checkBG(task.category)}">${task.category}</p>
       <h3>${task.title}</h3>
       <p class="description preview">${task.description}</p>
 
@@ -72,4 +72,15 @@ function checkSubtaskBeam(task, id) {
   } else if (task.subtasks?.length === 2) {
     beamRef.classList.add("full");
   }
+}
+
+
+function checkBG(category){
+  if (category === "User Story"){
+    return "bg-user-story";
+  }
+  if (category === "Technical Task"){
+    return "bg-technical-task";
+  }
+  return "";
 }

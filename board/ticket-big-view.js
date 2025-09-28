@@ -27,14 +27,16 @@ function bigViewHTML(t){
               ${t.description}
             </div>
 
-            <div class="ticket-date">
-              <p class="font-color">Due date:</p>
-              <p>${t.dueDate||"-"}</p>
-            </div>
+            <div class="ticket-info">
+                <div class="ticket-date">
+                <p class="font-color">Due date:</p>
+                <p>${formatDate(t.dueDate)}</p>
+                </div>
 
-            <div class="ticket-priority">
-              <p class="font-color">Priority:</p>
-              <p>${t.priority} <img src="${prioImage[t.priority]}"></p>
+                <div class="ticket-priority">
+                <p class="font-color">Priority:</p>
+                <p class="prio">${t.priority} <img src="${prioImage[t.priority]}"></p>
+                </div>
             </div>
 
             <div class="ticket-assign-wrapper">
@@ -57,7 +59,7 @@ function bigViewHTML(t){
                 </p>
 
                 <section>
-                    ${t.subtasks?.map(st=>`<li>${st}</li>`).join("")||""}
+                    ${t.subtasks?.map(st=>`<div class="check-subtask"><img src="../img/check-button.svg"><p>${st}</p></div>`).join("")||""}
                 </section>
             </div>
 
@@ -81,3 +83,14 @@ function bigViewHTML(t){
     
     `
 }
+
+
+function formatDate(dateString) {
+  if (!dateString) return "-";
+  const d = new Date(dateString);
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+

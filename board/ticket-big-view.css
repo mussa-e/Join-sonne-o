@@ -69,6 +69,19 @@
     font-weight: 400;
     color: black;
 }
+
+.ticket-info {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 0 25px; 
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.ticket-info > div {
+    display: contents; /* sorgt dafür, dass die Kindelemente direkt ins Grid fallen */
+}
 .ticket-date{
     display: flex;
     align-items: center;
@@ -84,6 +97,10 @@
     font-size: 20px;
     font-weight: 400;
     color: black;
+}
+.prio{
+    display: flex;
+    gap: 16px;
 }
 
 .ticket-assign-wrapper{
@@ -113,6 +130,24 @@
     font-size: 20px;
     font-weight: 400;
     color: #2A3647;
+    margin-bottom: 4px;
+}
+.check-subtask{
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 20px;
+    width: fit-content;
+    padding: 6px 16px;
+}
+.check-subtask:hover{
+    background-color: rgb(243, 243, 243);
+    border-radius: 12px;
+    cursor: default;
+}
+.check-subtask img:hover{
+    cursor: pointer;
 }
 
 
@@ -163,4 +198,7 @@
 .ticket-avatar{
     width: fit-content;
 }
+
+
+
 
