@@ -67,7 +67,7 @@ main textarea:focus{
     flex-direction: column;
     margin-left: 70px;
     width: 367px;
-    height: 367px;
+    height: 100%;
 }
 .input-section-left label{
     font-size: 20px;
@@ -77,7 +77,7 @@ main textarea:focus{
 .line{
     margin-top: 40px;
     background-color: #c8c8c8;
-    height: 400px;
+    height: 100%;
     width: 2px;
 }
 
@@ -85,7 +85,7 @@ main textarea:focus{
     display: flex;
     flex-direction: column;
     width: 367px;
-    height: 367px;
+    height: auto;
     
 }
 .input-section-right label{
@@ -224,7 +224,7 @@ main textarea:focus{
     width: 100%;
     max-width: 1920px;
     margin-left: 80px;
-    margin-top: 180px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
 }
