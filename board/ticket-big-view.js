@@ -15,7 +15,7 @@ function closeTicket(){
 function bigViewHTML(t){
     return `
             <div class="ticket-header">
-              <p class="ticket-category">${t.category}</p>
+              <p class="ticket-category ${checkBG(t.category)}">${t.category}</p>
               <div onclick="closeTicket()" class="ticket-close"><img src="../img/close-icon.svg"></div>
             </div>
 
@@ -93,4 +93,5 @@ function formatDate(dateString) {
   const year = d.getFullYear();
   return `${day}/${month}/${year}`;
 }
+
 

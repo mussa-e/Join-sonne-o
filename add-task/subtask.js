@@ -6,8 +6,19 @@ function renderSubtask(){
     let currentCount = list.getElementsByClassName("listed").length;
     let index = currentCount;
 
-    if (currentCount < 2 && subtask.value.trim() !==""){
-        list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
+    // if (currentCount < 2 && subtask.value.trim() !==""){
+    //     list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
+    //                           <span class="dot">•</span><p id="task-text-${index}">${subtask.value}</p>
+    //                             <span class="list-icon">
+    //                                 <img onmousedown="clearSubtask()" class="pencil" src="../img/pencil-solo.svg">
+    //                                 <img class="delimiter" src="../img/delimiter-vertical.svg">
+    //                                 <img onmousedown="deleteBulletpoint(${index})" class="trash" src="../img/trash.svg">
+    //                             </span>
+    //                         </li>
+    //     `;
+    //     subtask.value = "";
+    // }
+    list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
                               <span class="dot">•</span><p id="task-text-${index}">${subtask.value}</p>
                                 <span class="list-icon">
                                     <img onmousedown="clearSubtask()" class="pencil" src="../img/pencil-solo.svg">
@@ -17,7 +28,6 @@ function renderSubtask(){
                             </li>
         `;
         subtask.value = "";
-    }
 }
 
 
