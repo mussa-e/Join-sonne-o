@@ -2,7 +2,7 @@ function ticketBigView(id){
     const t = tasks[id];
     const ticketPopup = document.getElementById("big-view-wrapper");
     ticketPopup.classList.add("show");
-    ticketPopup.innerHTML = bigViewHTML(t);
+    ticketPopup.innerHTML = bigViewHTML(t, id);
 }
 
 
@@ -12,7 +12,7 @@ function closeTicket(){
 }
 
 
-function bigViewHTML(t){
+function bigViewHTML(t, id){
     return `
             <div class="ticket-header">
               <p class="ticket-category ${checkBG(t.category)}">${t.category}</p>
@@ -65,7 +65,7 @@ function bigViewHTML(t){
 
             <div class="ticket-footer-wrapper">
               <section class="ticket-footer-wrapper-right">
-                <div class="ticket-delete">
+                <div onclick="deleteTicket('${id}')" class="ticket-delete">
                   <img src="../img/trash-ticket.svg">
                   <p class="font-color">Delete</p>
                 </div>
@@ -94,4 +94,23 @@ function formatDate(dateString) {
   return `${day}/${month}/${year}`;
 }
 
+async function deleteTicket(id) {
+    // 1. Task lokal löschen
+    delete tasks[id];
+
+    // 2. Server löschen
+    await deleteData("tasks/" + id);
+
+    // 3. UI updaten
+    document.getElementById("big-view-wrapper").classList.remove("show");
+    document.querySelector(`[data-id="${id}"]`)?.remove(); // Karte vom Board entfernen
+}
+
+
+async function deleteData(path="") {
+    let response = await fetch(BASE_URL + path + ".json", {
+        method:"DELETE",
+    });
+    return response.ok;
+}
 
