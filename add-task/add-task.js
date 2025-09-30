@@ -140,3 +140,23 @@ function showReportAddedTask() {
 }
 
 
+function clearForm() {
+  document.getElementById("title").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("categoryValue").value = "";
+
+  document.querySelector("#category .select-trigger").innerHTML =
+    'Select Task Category <img src="../img/arrow_drop_downaa.svg">';
+
+  document.getElementById("subtask-list-1").innerHTML = "";
+
+  document.getElementById("assign-input").value = "";
+  document.getElementById("assigned-symbols").innerHTML = "";
+
+  document.querySelectorAll(".priority-section button").forEach(btn => {
+    btn.classList.remove("active"); 
+  });
+}
+
+

@@ -130,3 +130,36 @@ document.querySelectorAll("#category-temp .options li").forEach(li => {
         `;
     });
 });
+
+
+function resetInputsTemp() {
+  document.getElementById("title-temp").value = "";
+  document.getElementById("description-temp").value = "";
+  document.getElementById("date-temp").value = "";
+  document.getElementById("categoryValue-temp").value = "";
+  document.getElementById("assign-input").value = "";
+}
+
+function resetCategoryTemp() {
+  document.querySelector("#category-temp .select-trigger").innerHTML =
+    'Select Task Category <img src="../img/arrow_drop_downaa.svg">';
+}
+
+function resetSubtasksTemp() {
+  document.getElementById("subtask").value = "";
+  document.getElementById("subtask-list-1").innerHTML = "";
+  document.getElementById("assigned-symbols").innerHTML = "";
+}
+
+function resetPriorityTemp() {
+  document.querySelectorAll(".priority-section button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+}
+
+function clearFormTemp() {
+  resetInputsTemp();
+  resetCategoryTemp();
+  resetSubtasksTemp();
+  resetPriorityTemp();
+}

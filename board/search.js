@@ -19,6 +19,8 @@ function renderAllTasks(taskArray) {
   // Bestehende Tasks löschen
   document.querySelectorAll(".task-card").forEach(el => el.remove());
 
+  
+
   // Placeholder zurücksetzen (falls Spalten leer sind)
   resetPlaceholders();
 
@@ -40,13 +42,15 @@ function renderAllTasks(taskArray) {
 function handleSearch(event) {
   const query = event.target.value.trim().toLowerCase();
 
-  if (query === "") {
-    // document.getElementById("no-result").innerHTML = "";
-    renderAllTasks(tasks); // alle Tasks anzeigen
-    return;
-  }
+  const taskArray = Object.entries(tasks || {}); // Array draus machen
 
-  const filtered = tasks.filter(([id, task]) => {
+  if (query === "") {
+  const allTasks = Object.entries(tasks || {}); 
+  renderAllTasks(allTasks); // alle Tasks anzeigen
+  return;
+}
+
+  const filtered = taskArray.filter(([id, task]) => {
     return (
       task.title?.toLowerCase().includes(query) ||
       task.description?.toLowerCase().includes(query)
