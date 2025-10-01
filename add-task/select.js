@@ -85,7 +85,6 @@ function closeAllSelects(exception) {
 }
 
 
-
 function toggleArrow(img, open) {
   if (!img) return;
   img.src = open 
@@ -94,24 +93,6 @@ function toggleArrow(img, open) {
 }
 
 
-
-
-// function renderContactsDropdown(contacts) {
-//   const list = document.getElementById("contactSelection");
-//   list.innerHTML = ""; // alte Inhalte löschen
-
-//   contacts.forEach(contact => {
-//     const li = document.createElement("li");
-//     li.innerHTML = `
-//       <label class="assigned-list">
-//         <span style="background-color:${contact.color}" class="assigned-list-initials">${contact.init}</span> 
-//         <span class="assigned-list-name">${contact.name}</span>
-//         <input class="checkbox" type="checkbox" value="${contact.id}">
-//       </label>
-//     `;
-//     list.appendChild(li);
-//   });
-// }
 function renderContactsDropdown(contacts) {
   const list = document.getElementById("contactSelection");
   list.innerHTML = "";
@@ -135,18 +116,6 @@ function renderContactsDropdown(contacts) {
 }
 
 
-// function setupCheckboxToggle(label, img, color) {
-//   label.addEventListener("click", (e) => {
-//     e.stopPropagation();
-//     const checked = img.dataset.checked === "true";
-//     img.src = checked ? "../img/check-button.svg" : "../img/clicked.svg";
-//     img.dataset.checked = !checked;
-//     label.style.backgroundColor = checked ? "" : color;
-
-//     const name = label.querySelector(".assigned-list-name");
-//     name.style.color = checked ? "" : "#ffffff";
-//   });
-// }
 function setupCheckboxToggle(label, img, color) {
   label.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -179,9 +148,6 @@ function updateAssignedSymbols() {
     box.appendChild(div);
   });
 }
-
-
-
 
 
 function setupSearch(contacts) {

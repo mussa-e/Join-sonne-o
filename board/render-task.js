@@ -26,7 +26,7 @@ function renderTasktoBoard(task, id) {
 
       <div id="board-task-subtask-${id}" class="board-task-subtask">
         <p id="beam-${id}" class="board-task-subtask-beam"></p>
-        <p id="board-task-subtask-numb" class="board-task-subtask-numb">${task.subtasks?.length}/2 Subtasks</p>
+        <p id="board-task-subtask-numb" class="board-task-subtask-numb">/${task.subtasks?.length} Subtasks</p>
       </div>
       
 

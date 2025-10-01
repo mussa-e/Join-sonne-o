@@ -59,7 +59,11 @@ function bigViewHTML(t, id){
                 </p>
 
                 <section>
-                    ${t.subtasks?.map(st=>`<div class="check-subtask"><img src="../img/check-button.svg"><p>${st}</p></div>`).join("")||""}
+                    ${t.subtasks?.map((st, i)=>
+                      `<div class="check-subtask">
+                        <img onclick="subtaskDone(${i})" id="check-button-${i}" src="../img/check-button.svg">
+                        <p>${st}</p>
+                      </div>`).join("")||""}
                 </section>
             </div>
 
@@ -114,3 +118,16 @@ async function deleteData(path="") {
     return response.ok;
 }
 
+
+function subtaskDone(id) {
+    const img = document.getElementById(`check-button-${id}`);
+    
+    const empty = "../img/check-button.svg";
+    const checked = "../img/clicked-black.svg";
+
+    if (img.src.includes("check-button.svg")) {
+        img.src = checked;
+    } else {
+        img.src = empty;
+    }
+}

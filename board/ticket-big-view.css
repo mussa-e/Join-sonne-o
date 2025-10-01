@@ -145,6 +145,10 @@
     border-radius: 12px;
     cursor: default;
 }
+/* .check-subtask img{
+    width: 16px;
+    height: 16px;
+} */
 .check-subtask img:hover{
     cursor: pointer;
 }

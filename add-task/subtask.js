@@ -68,7 +68,6 @@ function editBulletpoint(index) {
 }
 
 
-
 function saveBulletpoint(index) {
     const input = document.getElementById(`edit-input-${index}`);
     const newValue = input.value.trim();
