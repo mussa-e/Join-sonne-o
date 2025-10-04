@@ -28,7 +28,11 @@ async function createTaskTemplate() {
     const assigned = [...selectedContacts]; 
     const category = document.getElementById("categoryValue-temp").value;
     const subtaskEls = document.querySelectorAll("#subtask-list-1 p");
-    const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
+    // const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
+    const subtasks = Array.from(subtaskEls).map(p => ({
+    title: p.textContent.trim(),
+    done: false
+    }));
     
 
     const task = {

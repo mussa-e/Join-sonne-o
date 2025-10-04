@@ -38,9 +38,14 @@ async function createTask() {
     const priority = selectedPriority ? selectedPriority.dataset.priority : "medium";
     const assigned = [...selectedContacts]; 
     const category = document.getElementById("categoryValue").value;
+
     const subtaskEls = document.querySelectorAll("#subtask-list-1 p");
-    const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
-    
+    // const subtasks = Array.from(subtaskEls).map(p => p.textContent.trim());
+    const subtasks = Array.from(subtaskEls).map(p => ({
+    title: p.textContent.trim(),
+    done: false
+    }));
+
 
     const task = {
         title,
@@ -158,5 +163,3 @@ function clearForm() {
     btn.classList.remove("active"); 
   });
 }
-
-
