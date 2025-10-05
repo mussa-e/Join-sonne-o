@@ -1,0 +1,66 @@
+.edit-ticket-header{
+    justify-content: flex-end;
+}
+
+.ticket-edit-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-edit-form input,
+.ticket-edit-form select{
+    /* width: 324px; */
+    max-width: 1920px;
+    border-radius: 7px;
+    border: 1px solid #c8c8c8;
+    padding: 12px 21px;
+    font-size: 20px;
+}
+.ticket-edit-form input,
+.ticket-edit-form select:hover{
+    cursor: pointer;
+}
+.ticket-edit-form input:focus,
+.ticket-edit-form select:focus{
+    border-color: #29ABE2;
+    outline: none;
+}
+
+.ticket-edit-form textarea{
+    max-width: 1920px;
+    height: 100px;
+    border-radius: 7px;
+    border: 1px solid #c8c8c8;
+    padding: 12px 21px;
+    font-size: 20px;
+    font-family: arial, sans-serif;
+    resize: none;
+}
+.ticket-edit-form textarea:hover{
+    cursor: pointer;
+}
+.ticket-edit-form textarea:focus{
+    border-color: #29ABE2;
+    outline: none;
+}
+
+.ticket-edit-form label{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+
+.edit-assign-input{
+    width: 92%;
+}
+
+.subtask-ul{
+    padding-left: 0;
+    list-style: none;
+}
+.edit-subtask{
+    align-items: flex-start!important;
+}
+.edit-subtask-input{
+    width: 92%!important;
+}

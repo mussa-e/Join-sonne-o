@@ -152,7 +152,7 @@ function bigViewHTML(t, id){
                   <img src="../img/line-ticket.svg">
                 </div>
 
-                <div class="ticket-edit">
+                <div onclick="ticketEdit('${id}')" class="ticket-edit">
                   <img src="../img/pencil-ticket.svg">
                   <p class="font-color">Edit</p>
                 </div>
