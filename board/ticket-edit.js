@@ -41,13 +41,14 @@ function ticketEdit(id) {
             <div id="edit-assigned-symbols" class="assigned-symbols"></div>
           </div>
 
+
             <label for="editSubtask">Subtask</label>
           <div class="subtask-wrapper edit-subtask">
             <input 
               id="edit-subtask-input" 
               class="subtask edit-subtask-input" 
               type="text" 
-              placeholder="Enter new subtask"
+              placeholder="Add new subtask"
               onkeydown="if(event.key === 'Enter') addEditSubtask()"
             >
             <span class="subtask-icon">
@@ -57,6 +58,7 @@ function ticketEdit(id) {
             </span>
           </div>
           <ul class="ul-div" id="edit-subtask-list"></ul>
+
 
             <div class="ticket-footer-wrapper">
                 <button class="save-btn" onclick="saveEditedTicket('${id}')">OK</button>
@@ -89,14 +91,35 @@ function toggleEditAssigned(name) {
     }
 }
 
-function addEditSubtask() {
-    const input = document.getElementById("new-edit-subtask");
-    const title = input.value.trim();
-    if (!title) return;
-    window.editSubtasks.push({ title, done: false });
-    input.value = "";
-    ticketEdit(currentEditId); // neu rendern
+
+function addEditSubtask(){
+    let subtask = document.getElementById("edit-subtask-input");
+    let list = document.getElementById("edit-subtask-list");
+
+
+    let currentCount = list.getElementsByClassName("listed").length;
+    let index = currentCount;
+
+    if(subtask.value.trim() !==""){
+    list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
+                              <span class="dot">•</span><p id="task-text-${index}">${subtask.value}</p>
+                                <span class="list-icon">
+                                    <img onmousedown="clearSubtask()" class="pencil" src="../img/pencil-solo.svg">
+                                    <img class="delimiter" src="../img/delimiter-vertical.svg">
+                                    <img onmousedown="deleteBulletpoint(${index})" class="trash" src="../img/trash.svg">
+                                </span>
+                            </li>
+        `;
+        subtask.value = "";
+}}
+
+
+function clearEditSubtask(){
+    document.getElementById("edit-subtask-input").value = "";
 }
+
+
+
 
 function removeEditSubtask(i) {
     window.editSubtasks.splice(i, 1);

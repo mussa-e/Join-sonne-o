@@ -18,6 +18,7 @@ function renderSubtask(){
     //     `;
     //     subtask.value = "";
     // }
+    if(subtask.value.trim() !==""){
     list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
                               <span class="dot">•</span><p id="task-text-${index}">${subtask.value}</p>
                                 <span class="list-icon">
@@ -28,7 +29,7 @@ function renderSubtask(){
                             </li>
         `;
         subtask.value = "";
-}
+}}
 
 
 function clearSubtask(){
