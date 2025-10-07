@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+    initPriorityButtons();
+});
+
+
 const buttons = document.querySelectorAll(".priority-section button");
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -20,11 +25,6 @@ function initPriorityButtons() {
         });
     });
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    initPriorityButtons();
-});
 
 
 async function createTask() {

@@ -28,18 +28,19 @@ function ticketEdit(id) {
 
             <label>Priority</label>
             <div class="priority-section">
-                <button data-priority="urgent" type="button" class="${t.priority === 'urgent' ? 'active' : ''}" onclick="setEditPriority('urgent')">Urgent<img src="../img/urgent.svg"></button>
-                <button data-priority="medium" type="button" class="${t.priority === 'medium' ? 'active' : ''}" onclick="setEditPriority('medium')">Medium<img src="../img/medium.svg"></button>
-                <button data-priority="low" type="button" class="${t.priority === 'low' ? 'active' : ''}" onclick="setEditPriority('low')">Low<img src="../img/low.svg"></button>
+                <button data-priority="urgent" type="button" class="${t.priority === 'urgent' ? 'active' : ''}" >Urgent<img src="../img/urgent.svg"></button>
+                <button data-priority="medium" type="button" class="${t.priority === 'medium' ? 'active' : ''}" >Medium<img src="../img/medium.svg"></button>
+                <button data-priority="low" type="button" class="${t.priority === 'low' ? 'active' : ''}" >Low<img src="../img/low.svg"></button>
             </div>
 
-            <label for="editAssignInput">Assigned to</label>
-          <div class="custom-select">
-            <input id="edit-assign-input" class="select-trigger assign-input edit-assign-input" placeholder="Select contacts to assign">
-            <img class="assign-img" src="../img/arrow_drop_downaa.svg"> 
-            <ul class="options options-assigned-to" id="editContactSelection"></ul>
-            <div id="edit-assigned-symbols" class="assigned-symbols"></div>
-          </div>
+            <label for="editContactSelection">Assigned to</label>
+            <div class="custom-select">
+                <input id="edit-assign-input" class="select-trigger assign-input edit-assign-input" placeholder="Select contacts to assign">
+                <img class="assign-img" src="../img/arrow_drop_downaa.svg"> 
+                <ul class="options options-assigned-to" id="editContactSelection"></ul>
+                <div id="edit-assigned-symbols" class="assigned-symbols"></div>
+            </div>
+
 
 
             <label for="editSubtask">Subtask</label>
@@ -71,24 +72,8 @@ function ticketEdit(id) {
     window.editAssigned = [...(t.assigned || [])];
     window.editSubtasks = JSON.parse(JSON.stringify(t.subtasks || []));
     window.editPriority = t.priority;
-}
 
-
-function setEditPriority(prio) {
-    window.editPriority = prio;
-    document.querySelectorAll(".priority-section button").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.priority === prio);
-    });
-}
-
-function toggleEditAssigned(name) {
-    const contact = contacts.find(c => c.name === name);
-    const exists = window.editAssigned.some(a => a.name === name);
-    if (exists) {
-        window.editAssigned = window.editAssigned.filter(a => a.name !== name);
-    } else {
-        window.editAssigned.push(contact);
-    }
+    initEditPriorityButtons();
 }
 
 
@@ -104,7 +89,7 @@ function addEditSubtask(){
     list.innerHTML += `<li onclick="editBulletpoint(${index})" id="listed-${index}" class="listed"> 
                               <span class="dot">•</span><p id="task-text-${index}">${subtask.value}</p>
                                 <span class="list-icon">
-                                    <img onmousedown="clearSubtask()" class="pencil" src="../img/pencil-solo.svg">
+                                    <img onmousedown="clearEditSubtask()" class="pencil" src="../img/pencil-solo.svg">
                                     <img class="delimiter" src="../img/delimiter-vertical.svg">
                                     <img onmousedown="deleteBulletpoint(${index})" class="trash" src="../img/trash.svg">
                                 </span>
@@ -119,11 +104,34 @@ function clearEditSubtask(){
 }
 
 
+function initEditPriorityButtons() {
+  const prioButtons = document.querySelectorAll("#big-view-wrapper .priority-section button");
+  prioButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      prioButtons.forEach(b => b.classList.remove("urgent", "medium", "low", "active"));
+
+      const priority = button.dataset.priority;
+      button.classList.add(priority, "active");
+      window.editPriority = priority; // wichtig, damit später gespeichert wird
+    });
+  });
+}
 
 
-function removeEditSubtask(i) {
-    window.editSubtasks.splice(i, 1);
-    ticketEdit(currentEditId);
+
+
+
+///////////////////////////////////KI generated - muss gecheckt werden/////////////////////////////////////////
+
+
+function toggleEditAssigned(name) {
+    const contact = contacts.find(c => c.name === name);
+    const exists = window.editAssigned.some(a => a.name === name);
+    if (exists) {
+        window.editAssigned = window.editAssigned.filter(a => a.name !== name);
+    } else {
+        window.editAssigned.push(contact);
+    }
 }
 
 
@@ -148,12 +156,10 @@ async function saveEditedTicket(id) {
         subtasks: updatedSubtasks
     };
 
-    // In Speicher / Datenbank updaten
-    await patchData("tasks", id, updatedTask);
+    await patchData("tasks", id, updatedTask); // In Speicher / Datenbank updaten
     tasks[id] = updatedTask;
-
-    // Popup wieder anzeigen
-    ticketBigView(id);
+    
+    ticketBigView(id);// Popup wieder anzeigen
     loadTasks(); // Board neu rendern
 }
 

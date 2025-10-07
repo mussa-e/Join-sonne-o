@@ -17,10 +17,7 @@ async function register() {
 }
 
 initUsers();
-
-
 showReportRegister();
-
 }
 
 
@@ -39,7 +36,7 @@ function showReportRegister() {
 
 
 
-////here begins the firebase//////////////////////////////////////////////////
+////here starts the firebase//////////////////////////////////////////////////
 let users = [];
 let tasks = [];
 
@@ -52,7 +49,6 @@ const BASE_URL = "https://join-test-dd7c9-default-rtdb.europe-west1.firebasedata
 function initUsers(){
     loadData();
     loadUsers();
-    
 }
 
 

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await initContacts();// Warten bis Firebase-Kontakte geladen sind (aus contacts.js)
   initCustomSelects();
   setupSearch(contacts);
+
   document.addEventListener("click", () => closeAllSelects());
 });
 
