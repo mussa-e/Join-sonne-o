@@ -35,10 +35,21 @@ function ticketEdit(id) {
 
             <label for="editContactSelection">Assigned to</label>
             <div class="custom-select">
-                <input id="edit-assign-input" class="select-trigger assign-input edit-assign-input" placeholder="Select contacts to assign">
+                <input id="edit-assign-input" 
+                class="select-trigger assign-input edit-assign-input" 
+                placeholder="Select contacts to assign"
+                >
                 <img class="assign-img" src="../img/arrow_drop_downaa.svg"> 
-                <ul class="options options-assigned-to" id="editContactSelection"></ul>
-                <div id="edit-assigned-symbols" class="assigned-symbols"></div>
+                <ul class="options options-assigned-to" id="editContactSelection">
+                </ul>
+                <div id="edit-assigned-symbols" class="assigned-symbols">
+                ${t.assigned?.map(c=>`
+                        <div class="ticket-avatar-wrapper">
+                            <div class="ticket-avatar assigned-symbol task-avatar" 
+                                style="background:${c.color}">${c.init}
+                            </div>
+                        </div>`).join("")}
+                </div>
             </div>
 
 
@@ -74,6 +85,7 @@ function ticketEdit(id) {
     window.editPriority = t.priority;
 
     initEditPriorityButtons();
+    initEditCustomSelect();
 }
 
 
