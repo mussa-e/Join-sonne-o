@@ -77,7 +77,7 @@ function renderEditContactsDropdown(contacts) {
     const li = document.createElement("li");
     li.innerHTML = `
       <label id="edit-assigned-list-${contact.id}" class="assigned-list" style="${isSelected ? 'background:#2A3647;' : ''}">
-        <span style="background-color:${contact.color}" class="assigned-list-initials">${contact.init}</span> 
+        <span style="background-color:${contact.color}; width:43px" class="assigned-list-initials">${contact.init}</span> 
         <span class="assigned-list-name" style="${isSelected ? 'color:#fff;' : ''}">${contact.name}</span>
         <img class="checkbox" 
              src="${isSelected ? '../img/clicked.svg' : '../img/check-button.svg'}" 
