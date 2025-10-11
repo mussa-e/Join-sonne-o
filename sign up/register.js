@@ -78,16 +78,6 @@ async function putData(path="", data={}) {
 }
 
 
-async function renderUser() {
-
-    const data = await loadData("users");
-    users = Object.values(data || {});
-
-    updateNormalHTML();
-    updatePlusHTML();
-}
-
-
 async function postData(path="", data={}) {
     let response = await fetch(BASE_URL + path + ".json", {
         method:"POST",
@@ -98,5 +88,18 @@ async function postData(path="", data={}) {
     });
     return response.json();
 }
+
+
+async function renderUser() {
+
+    const data = await loadData("users");
+    users = Object.values(data || {});
+
+    updateNormalHTML();
+    updatePlusHTML();
+}
+
+
+
 
 

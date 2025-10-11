@@ -1,4 +1,4 @@
-let selectedEditContacts = [];
+window.editAssigned = [];
 
 // Wird nach dem Öffnen des Edit-Tickets aufgerufen
 async function initEditCustomSelect() {
@@ -72,7 +72,7 @@ function renderEditContactsDropdown(contacts) {
   list.innerHTML = "";
 
   contacts.forEach(contact => {
-    const isSelected = selectedEditContacts.some(c => c.id === contact.id);
+    const isSelected = window.editAssigned.some(c => c.id === contact.id);
 
     const li = document.createElement("li");
     li.innerHTML = `
@@ -100,12 +100,12 @@ function setupEditCheckboxToggle(label, img, color) {
     const name = label.querySelector(".assigned-list-name");
     const initials = label.querySelector(".assigned-list-initials");
 
-    if (!checked && selectedEditContacts.length < 3) {
+    if (!checked && window.editAssigned.length < 3) {
       img.src = "../img/clicked.svg";
       img.dataset.checked = "true";
       label.style.backgroundColor = color;
       name.style.color = "#fff";
-      selectedEditContacts.push({
+      window.editAssigned.push({
         id: img.value,
         name: name.textContent,
         init: initials.textContent,
@@ -116,7 +116,7 @@ function setupEditCheckboxToggle(label, img, color) {
       img.dataset.checked = "false";
       label.style.backgroundColor = "";
       name.style.color = "";
-      selectedEditContacts = selectedEditContacts.filter(c => c.id !== img.value);
+      window.editAssigned = window.editAssigned.filter(c => c.id !== img.value);
     }
     updateEditAssignedSymbols();
   });
@@ -125,7 +125,7 @@ function setupEditCheckboxToggle(label, img, color) {
 function updateEditAssignedSymbols() {
   const box = document.getElementById("edit-assigned-symbols");
   box.innerHTML = "";
-  selectedEditContacts.slice(0,3).forEach(c => {
+  window.editAssigned.slice(0,3).forEach(c => {
     const div = document.createElement("div");
     div.className = "assigned-symbol";
     div.style.backgroundColor = c.color;

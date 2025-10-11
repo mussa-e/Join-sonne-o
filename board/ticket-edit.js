@@ -73,8 +73,8 @@ function ticketEdit(id) {
 
 
             <div class="ticket-footer-wrapper">
-                <button class="save-btn" onclick="saveEditedTicket('${id}')">OK</button>
                 <button class="cancel-btn" onclick="ticketBigView('${id}')">Cancel</button>
+                <button class="save-btn" onclick="saveEditedTicket('${id}')">Ok</button>
             </div>
         </div>
     `;
@@ -173,5 +173,18 @@ async function saveEditedTicket(id) {
     
     ticketBigView(id);// Popup wieder anzeigen
     loadTasks(); // Board neu rendern
+    location.reload();
 }
 
+
+async function patchData(path = "", id = "", data = {}) {
+    const response = await fetch(`${BASE_URL}${path}/${id}.json`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    });
+
+    return await response.json();
+}
