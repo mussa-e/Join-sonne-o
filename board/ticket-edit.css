@@ -5,6 +5,8 @@
 .ticket-edit-form{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .ticket-edit-form input,
@@ -28,7 +30,7 @@
 
 .ticket-edit-form textarea{
     max-width: 1920px;
-    height: 100px;
+    min-height: 100px;
     border-radius: 7px;
     border: 1px solid #c8c8c8;
     padding: 12px 21px;
@@ -51,7 +53,7 @@
 }
 
 .edit-assign-input{
-    width: 92%;
+    width: 458px;
 }
 
 .subtask-ul{
@@ -60,7 +62,37 @@
 }
 .edit-subtask{
     align-items: flex-start!important;
+    width: 498px;
 }
 .edit-subtask-input{
     width: 92%!important;
+}
+
+.save-btn{
+    width: 89px;
+    height: 57px;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 4px;
+    opacity: 1;
+    background: #2A3647;
+    color: #ffffff;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 21px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+.save-btn:hover{
+    cursor:pointer;
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: none;
+
+}
+.save-btn img{
+    width: 16px;
+    height: 16px;
+    opacity: 1;
 }

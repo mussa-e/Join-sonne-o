@@ -1,4 +1,7 @@
 let currentEditId = null;
+window.editSubtasks = [];
+window.editAssigned = [];
+window.editPriority = "";
 
 
 function ticketEdit(id) {
@@ -69,12 +72,26 @@ function ticketEdit(id) {
               <img onmousedown="addEditSubtask()" class="hook" src="../img/hook-dark.svg">
             </span>
           </div>
-          <ul class="ul-div" id="edit-subtask-list"></ul>
+          <ul class="ul-div" id="edit-subtask-list">
+
+          ${t.subtasks?.map((st, i)=>
+                    `<li onclick="editBulletpoint(${i})" id="listed-${i}" class="listed"> 
+                              <span class="dot">•</span><p id="task-text-${i}">${st.title}</p>
+                                <span class="list-icon">
+                                    <img onmousedown="clearEditSubtask()" class="pencil" src="../img/pencil-solo.svg">
+                                    <img class="delimiter" src="../img/delimiter-vertical.svg">
+                                    <img onmousedown="deleteBulletpointEdit(${i})" class="trash" src="../img/trash.svg">
+                                </span>
+                            </li>`
+                  ).join("") || ""}
+
+          </ul>
 
 
             <div class="ticket-footer-wrapper">
-                <button class="cancel-btn" onclick="ticketBigView('${id}')">Cancel</button>
-                <button class="save-btn" onclick="saveEditedTicket('${id}')">Ok</button>
+                    <button class="save-btn" onclick="saveEditedTicket('${id}')">
+                    Ok<img src="../img/hook.svg">
+                    </button>
             </div>
         </div>
     `;
@@ -89,7 +106,16 @@ function ticketEdit(id) {
 }
 
 
+function deleteBulletpointEdit(index) {
+  const el = document.getElementById(`listed-${index}`);
+  if (el) el.remove();
+  window.editSubtasks.splice(index, 1);
+}
+
+
 function addEditSubtask(){
+    
+
     let subtask = document.getElementById("edit-subtask-input");
     let list = document.getElementById("edit-subtask-list");
 
@@ -103,11 +129,20 @@ function addEditSubtask(){
                                 <span class="list-icon">
                                     <img onmousedown="clearEditSubtask()" class="pencil" src="../img/pencil-solo.svg">
                                     <img class="delimiter" src="../img/delimiter-vertical.svg">
-                                    <img onmousedown="deleteBulletpoint(${index})" class="trash" src="../img/trash.svg">
+                                    <img onmousedown="deleteBulletpointEdit(${index})" class="trash" src="../img/trash.svg">
                                 </span>
                             </li>
         `;
+
+        window.editSubtasks.push({
+            title: subtask.value.trim(),
+            done: false
+        });
+
         subtask.value = "";
+
+    
+
 }}
 
 
@@ -128,12 +163,6 @@ function initEditPriorityButtons() {
     });
   });
 }
-
-
-
-
-
-///////////////////////////////////KI generated - muss gecheckt werden/////////////////////////////////////////
 
 
 function toggleEditAssigned(name) {
@@ -170,7 +199,7 @@ async function saveEditedTicket(id) {
 
     await patchData("tasks", id, updatedTask); // In Speicher / Datenbank updaten
     tasks[id] = updatedTask;
-    
+
     ticketBigView(id);// Popup wieder anzeigen
     loadTasks(); // Board neu rendern
     location.reload();
