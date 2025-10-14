@@ -212,7 +212,7 @@
 
     <div class="schedule-wrapper">
 
-      <section class="schedule-section">
+      <section class="schedule-section" ondrop="moveTo('todo')" ondragover="allowDrop(event)">
         <div class="schedule-header">
           <h2>To Do</h2>
           <img onclick="addTask('todo')" src="../img/plus-button.svg" />
@@ -228,7 +228,7 @@
         </div>
       </section>
 
-      <section class="schedule-section">
+      <section class="schedule-section" ondrop="moveTo('progress')" ondragover="allowDrop(event)">
         <div class="schedule-header">
           <h2>In Progress</h2>
           <img onclick="addTask('progress')" src="../img/plus-button.svg" />
@@ -244,7 +244,7 @@
         </div>
       </section>
 
-      <section class="schedule-section">
+      <section class="schedule-section" ondrop="moveTo('feedback')" ondragover="allowDrop(event)">
         <div class="schedule-header">
           <h2>Await feedback</h2>
           <img onclick="addTask('feedback')" src="../img/plus-button.svg" />
@@ -260,7 +260,7 @@
         </div>
       </section>
 
-      <section class="schedule-section">
+      <section class="schedule-section" ondrop="moveTo('done')" ondragover="allowDrop(event)">
         <div class="schedule-header">
           <h2>Done</h2>
         </div>

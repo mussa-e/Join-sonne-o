@@ -66,7 +66,8 @@ function renderTasktoBoard(task, id) {
   const doneCount = task.subtasks?.filter(st => st.done).length || 0;
 
   const taskHTML = `
-    <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}">
+    <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}" 
+      draggable="true" ondragstart="startDragging('${id}')">
       <p class="category ${checkBG(task.category)}">${task.category}</p>
       <h3>${task.title}</h3>
       <p class="description preview">${task.description}</p>
@@ -85,8 +86,6 @@ function renderTasktoBoard(task, id) {
       </div>
       
     </div>`;
-
-    
 
 
   const column = document.getElementById(task.status);
@@ -111,17 +110,7 @@ function subtasksAvailable(task,id) {
   }
 }
 
-// function checkSubtaskBeam(task, id) {
-//   const beamRef = document.getElementById(`beam-${id}`);
 
-//   beamRef.classList.remove("half", "full");
-
-//   if (task.subtasks?.length === 1) {
-//     beamRef.classList.add("half");
-//   } else if (task.subtasks?.length === 2) {
-//     beamRef.classList.add("full");
-//   }
-// }
 function checkSubtaskBeam(task, id) {
     const beamRef = document.getElementById(`beam-${id}`);
     if (!beamRef || !task.subtasks || task.subtasks.length === 0) return;
@@ -136,8 +125,6 @@ function checkSubtaskBeam(task, id) {
 }
 
 
-
-
 function checkBG(category){
   if (category === "User Story"){
     return "bg-user-story";
@@ -146,4 +133,50 @@ function checkBG(category){
     return "bg-technical-task";
   }
   return "";
+}
+
+
+///////////////////////////drag and drop/////////////////////////////////////////////////////
+let currentDraggedElement;
+
+
+function allowDrop(ev){
+  ev.preventDefault();
+}
+
+function startDragging(id) {
+    currentDraggedElement = id;
+}
+
+
+async function moveTo(status) {
+  tasks[currentDraggedElement].status = status;
+  await saveData("tasks", tasks);
+  refreshBoard();
+}
+
+
+function refreshBoard() {
+  // Alles leeren
+  ["todo", "progress", "feedback", "done"].forEach(col => {
+    const column = document.getElementById(col);
+    const placeholder = document.getElementById(
+      `placeholder-${["todo","progress","feedback","done"].indexOf(col)+1}`
+    );
+
+    column.innerHTML = "";
+    placeholder.classList.remove("d-none");
+  });
+
+  Object.entries(tasks).forEach(([id, task]) => renderTasktoBoard(task, id));
+}
+
+
+async function saveData(key, data) {
+  const dbPath = `${BASE_URL}/${key}.json`;
+  await fetch(dbPath, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
+  });
 }
