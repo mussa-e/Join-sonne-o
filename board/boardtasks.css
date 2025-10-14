@@ -83,6 +83,10 @@
 }
 
 
-
+.drag-animation {
+  transform: rotate(6deg);
+  transition: transform 0.2s ease;
+  cursor: grabbing;
+}
 
 

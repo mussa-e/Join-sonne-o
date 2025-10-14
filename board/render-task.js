@@ -66,7 +66,7 @@ function renderTasktoBoard(task, id) {
   const doneCount = task.subtasks?.filter(st => st.done).length || 0;
 
   const taskHTML = `
-    <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}" 
+    <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}" id="${id}"
       draggable="true" ondragstart="startDragging('${id}')">
       <p class="category ${checkBG(task.category)}">${task.category}</p>
       <h3>${task.title}</h3>
@@ -94,6 +94,9 @@ function renderTasktoBoard(task, id) {
     column.insertAdjacentHTML("beforeend", taskHTML);
     document.getElementById(`placeholder-${["todo","progress","feedback","done"].indexOf(task.status)+1}`).classList.add("d-none");
   } 
+
+  const box = document.getElementById(id);
+  dragAnimation(box);
 
   subtasksAvailable(task, id);
   checkSubtaskBeam(task,id);
@@ -144,8 +147,18 @@ function allowDrop(ev){
   ev.preventDefault();
 }
 
+function dragAnimation(box) {
+  box.addEventListener("mousedown", () => box.classList.add("drag-animation"));
+  box.addEventListener("mouseup", () => box.classList.remove("drag-animation"));
+  box.addEventListener("mouseleave", () => box.classList.remove("drag-animation"));
+  box.addEventListener("dragend", () => box.classList.remove("drag-animation"));
+
+}
+
 function startDragging(id) {
     currentDraggedElement = id;
+
+    const box = document.getElementById(`${id}`).classList.add("drag-animation");
 }
 
 
