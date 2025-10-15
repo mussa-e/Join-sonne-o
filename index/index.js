@@ -10,23 +10,58 @@ function guestLogin() {
   }
 
 
-  function logIn(){
-    formValidationLogIn();
+function logIn() {
+  formValidationLogIn();
 
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
+  let email = document.getElementById("email");
+  let password = document.getElementById("password");
 
-    let user = users.find(u => u.email == email.value && u.password == password.value);
-    
+  let user = users.find(u => u.email == email.value && u.password == password.value);
+  let userMail = users.find(u => u.email == email.value);
+  let userPassword = users.find(u => u.password == password.value);
+
+  if (user) {
+    sessionStorage.setItem("loginType", "user");
+    sessionStorage.removeItem("guestSrc");
     currentUser = sessionStorage.setItem("currentUser", user.name);
+    window.location.href = "../summary/summary.html";
+  }
 
-    if (user){
-      sessionStorage.setItem("loginType", "user");
-      sessionStorage.removeItem("guestSrc");
-
-        
-        window.location.href = "../summary/summary.html";
+  else if(!userMail && !email.value == ""){
+        wrongEmail(email);
     }
+
+    else if(!userPassword && !password.value ==""){
+        wrongPasswowrd(password);
+    }
+}
+
+
+function wrongEmail(email){
+    email.value = "";
+    email.placeholder = "wrong email";
+    email.style.borderColor="#FF8190";
+    email.classList.add("placeholder-red");
+
+    setTimeout(() => {
+      email.placeholder = "Email";
+      email.style.borderColor = "";
+      email.classList.remove("placeholder-red");
+    }, 3000);
+}
+
+
+function wrongPasswowrd(password){
+    password.value = "";
+    password.placeholder = "wrong password";
+    password.style.borderColor="#FF8190";
+    password.classList.add("placeholder-red");
+
+    setTimeout(() => {
+      password.placeholder = "Password";
+      password.style.borderColor = "";
+      password.classList.remove("placeholder-red");
+    }, 3000);
 }
 
 
@@ -41,9 +76,7 @@ function greet() {
 }
 
 
-
-
-  function greetingGuest() {
+function greetingGuest() {
     const hours = new Date().getHours();
     let timeOfDay;
 
@@ -90,11 +123,6 @@ function renderUserName() {
     document.getElementById("initials").innerHTML = initials;
     sessionStorage.setItem("initials", initials);
 }
-
-
-
-
-
 
 
 window.addEventListener("DOMContentLoaded", () => {

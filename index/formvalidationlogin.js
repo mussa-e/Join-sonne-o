@@ -7,8 +7,6 @@ function formValidationLogIn() {
         displayRequiredMessageLogIn();
         return;
     }
-
-    
 }
 
 function displayRequiredMessageLogIn() {{
@@ -21,6 +19,11 @@ function displayRequiredMessageLogIn() {{
     if (emailInput.value === "") {
         emailMessage.classList.remove("d-none");
         emailInput.classList.add("input-error");
+        setTimeout(() => {
+        emailMessage.classList.add("d-none");
+        emailInput.classList.remove("input-error");
+    }, 3000);
+
     } else {
         emailMessage.classList.add("d-none");
         emailInput.classList.remove("input-error");
@@ -29,6 +32,11 @@ function displayRequiredMessageLogIn() {{
     if (passwordInput.value === "") {
         passwordMessage.classList.remove("d-none");
         passwordInput.classList.add("input-error");
+        setTimeout(() => {
+        passwordMessage.classList.add("d-none");
+        passwordInput.classList.remove("input-error");
+    }, 3000);
+
     } else {
         passwordMessage.classList.add("d-none");
         passwordInput.classList.remove("input-error");
