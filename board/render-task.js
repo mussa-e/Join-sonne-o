@@ -157,8 +157,6 @@ function dragAnimation(box) {
 
 function startDragging(id) {
     currentDraggedElement = id;
-
-    const box = document.getElementById(`${id}`).classList.add("drag-animation");
 }
 
 
@@ -192,4 +190,27 @@ async function saveData(key, data) {
     body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" },
   });
+}
+
+
+function highlight(containerId) {
+    const container = document.getElementById(containerId);
+    
+    // Sicherstellen, dass es nur ein Highlight gibt
+    if (container.querySelector(".drag-area-highlight")) return;
+
+    const highlightDiv = document.createElement("div");
+    highlightDiv.classList.add("drag-area-highlight");
+    
+    container.style.position = "relative"; 
+
+    container.appendChild(highlightDiv);
+}
+
+function removeHighlight(containerId) {
+    const container = document.getElementById(containerId);
+    const highlightDiv = container.querySelector(".drag-area-highlight");
+    if (highlightDiv) {
+        container.removeChild(highlightDiv);
+    }
 }
