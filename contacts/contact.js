@@ -140,8 +140,10 @@ async function prepContact() {
 
     localStorage.setItem("lastCreatedContactId", contactData.id);
 
+    // closePopupWindow();
     await initContacts();
     renderContact();
+    
 }
 
 
@@ -182,9 +184,10 @@ function renderContact() {
    document.getElementById("contact-overview").innerHTML = overviewHTML(initials, current);
 
    useRandomColor("contact-initials", current);
-   closePopup();
+   closePopupWindow();
    showSucces();
    prepContactNav(initials);
+   
 }
 
 
@@ -218,6 +221,7 @@ function syncBG(refName){
 
 
 async function prepContactNav(initials) {
+    
     await initContacts();
 
     firstLetter = justCreatedContact.name[0].toUpperCase();
@@ -231,7 +235,7 @@ async function prepContactNav(initials) {
         section.classList.remove("d-none");
     }
 
-    window.location.href = "contacts.html"; 
+    window.location.href = "contacts.html";
 }
 
 

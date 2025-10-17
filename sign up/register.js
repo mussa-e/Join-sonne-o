@@ -11,6 +11,19 @@ async function register() {
             "id":users.length
         });
 
+        await postData("contacts/", {
+            "name": userName,
+            "email": email,
+            "phone": "",
+            "id": contacts.length,
+            "color": colors[Math.floor(Math.random() * colors.length)],
+            "assigned": false,
+            "init": userName
+            .split(" ")
+            .map(p => p[0].toUpperCase())
+            .join("")
+                });
+
         document.getElementById("name-SignUp").value = "";
         document.getElementById("email-SignUp").value = "";
         document.getElementById("password-SignUp").value = "";
@@ -87,16 +100,6 @@ async function postData(path="", data={}) {
         body: JSON.stringify(data)
     });
     return response.json();
-}
-
-
-async function renderUser() {
-
-    const data = await loadData("users");
-    users = Object.values(data || {});
-
-    updateNormalHTML();
-    updatePlusHTML();
 }
 
 
