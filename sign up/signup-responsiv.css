@@ -1,0 +1,51 @@
+@media(max-width:800px){
+    .start-logo img {
+        width: 70px;
+        padding: 20px;
+    }
+    .login-container{
+        padding: 32px;
+        width: fit-content;
+    }
+    .login-container h1{
+        font-size: 40px;
+    }
+    .sign-up-back{
+        width: 24px;
+        height: 24px;
+    }
+    .sign-up-btn{
+        font-size: 16px;
+    }
+}
+
+@media(max-width:430px){
+    .login-container h1{
+        font-size: 30px;
+    }
+    .login-container form input{
+        width: 250px;
+    }
+    .login-container{
+        padding: 32px;
+    }
+    .sign-up-back{
+        width: 20px;
+        height: 20px;
+    }
+    .sign-up-btn{
+        width: unset;
+    }
+}
+
+@media(max-width:362px){
+    .login-container form input{
+        width: 200px;
+    }
+    .login-container{
+        padding: 32px 16px;
+    }
+    .start-logo img {
+        width: 50px;
+    }
+}

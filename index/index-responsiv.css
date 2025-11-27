@@ -1,0 +1,71 @@
+@media (max-width: 900px) {
+    .start-logo img{
+        width: 120px;
+    }
+    .login-container{
+        padding: 48px;
+    }
+}
+
+@media (max-width:730px){
+    .login-container{
+        padding: 28px;
+    }
+    .start-logo img{
+        width: 100px;
+    }
+}
+
+@media (max-width:470px){
+    .login-container h1{
+        font-size: 40px;
+        margin: 0;
+    }
+    .login-btn, .guest-btn{
+        font-size: 16px;
+        width: unset;
+    }
+    .start-logo img{
+        width: 70px;
+    }
+    .login-container{
+        top: 45%;
+    }
+    .login-header{
+        position:absolute;
+        bottom: 100px;
+        left: 100px;
+        /* left: 50%;
+        transform: translateX(-50%); */
+    }
+    .footer-rights{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:410px){
+    .login-container form{
+        width: 290px;
+    }
+    .login-container form input{
+        width: 220px;
+    }
+    .login-container{
+        padding: 16px;
+    }
+    .login-header{
+        left: 70px;
+    }
+}
+
+@media (max-width:350px){
+    .login-header{
+        left: 40px;
+    }
+    .login-container{
+        padding: 8px;
+    }
+    .login-container{
+        padding: 8px;
+    }
+}

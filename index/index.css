@@ -91,7 +91,6 @@ main {
     text-align: center;
     font-size: 61px;
     font-weight: 700;
-    margin-bottom: 20px;
 }
 .underline-blue {
     display: flex;
@@ -106,8 +105,9 @@ main {
     top: 288px;
     opacity: 1;
     color: white;
-    gap: 20px;
+    gap: 32px;
     margin-bottom: 48px;
+    margin-top: 40px;
 }
 .login-container form input {
     width: 300px;
