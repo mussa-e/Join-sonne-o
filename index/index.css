@@ -229,9 +229,11 @@ main {
 
 .required {
     color: #FF8190;
-    font-size: 12px;
-    margin-top: 8px;
+    font-size: 16px;
+    margin-top: 4px;
     font-weight: 400;
+    margin-left: 16px;
+    margin-bottom: 2px;
 }
 .input-error {
     border: 1px solid #FF8190 !important; 

@@ -1,6 +1,6 @@
 @media(max-width:800px){
     .start-logo img {
-        width: 70px;
+        width: 50px;
         padding: 20px;
     }
     .login-container{
@@ -20,6 +20,7 @@
 }
 
 @media(max-width:430px){
+    
     .login-container h1{
         font-size: 30px;
     }
@@ -35,17 +36,25 @@
     }
     .sign-up-btn{
         width: unset;
+        height: 36px;
+    }
+    .footer-rights{
+        padding-top: unset;
+        height: 100px;
     }
 }
 
 @media(max-width:362px){
+    .login-container form{
+        gap: 12px;
+    }
     .login-container form input{
         width: 200px;
     }
     .login-container{
-        padding: 32px 16px;
+        padding: 16px;
     }
     .start-logo img {
-        width: 50px;
+        width: 45px;
     }
 }
