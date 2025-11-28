@@ -8,7 +8,8 @@ html, body{
     background-color: #F6F7F8
 }
 .d-none {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
 }
 .flex {
     display: flex;

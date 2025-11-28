@@ -225,11 +225,15 @@ cursor: pointer;
     cursor: pointer;
     width: 130px;
     height: 46px;
-    display: none;
     align-items: center;
     justify-content: center;
     padding: 15px 24px;
     margin-top: 10px;
+    display: flex;
+}
+.sign-up-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 .sign-up-btn.show {
     display: flex;

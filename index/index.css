@@ -84,7 +84,7 @@ main {
     transform: translate(-50%, -50%);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    padding: 48px 115px;
+    padding: 48px 64px;
     background: #FFFFFF;
 }
 .login-container h1 {
@@ -232,8 +232,8 @@ main {
     font-size: 16px;
     margin-top: 4px;
     font-weight: 400;
-    margin-left: 16px;
     margin-bottom: 2px;
+    min-height: 18px;
 }
 .input-error {
     border: 1px solid #FF8190 !important; 

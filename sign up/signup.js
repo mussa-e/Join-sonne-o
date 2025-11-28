@@ -1,12 +1,19 @@
+// const checkbox = document.getElementById("accept");
+// const button = document.querySelector(".sign-up-btn");
+// checkbox.addEventListener("change", () => {
+//   if (checkbox.checked) {
+//     button.classList.add("show");
+//   } else {
+//     button.classList.remove("show");
+//   }
+// });
 const checkbox = document.getElementById("accept");
 const button = document.querySelector(".sign-up-btn");
+
 checkbox.addEventListener("change", () => {
-  if (checkbox.checked) {
-    button.classList.add("show");
-  } else {
-    button.classList.remove("show");
-  }
+  button.disabled = !checkbox.checked;
 });
+
 
 
 function signUp() {

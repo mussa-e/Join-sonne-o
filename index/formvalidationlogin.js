@@ -17,15 +17,15 @@ function displayRequiredMessageLogIn() {{
     const passwordMessage = passwordInput.nextElementSibling;
 
     if (emailInput.value === "") {
-        emailMessage.classList.remove("d-none");
+        // emailMessage.classList.remove("d-none");
         emailInput.classList.add("input-error");
         setTimeout(() => {
-        emailMessage.classList.add("d-none");
+        // emailMessage.classList.add("d-none");
         emailInput.classList.remove("input-error");
     }, 3000);
 
     } else {
-        emailMessage.classList.add("d-none");
+        // emailMessage.classList.add("d-none");
         emailInput.classList.remove("input-error");
     }
 
@@ -42,6 +42,7 @@ function displayRequiredMessageLogIn() {{
         passwordInput.classList.remove("input-error");
     }
 }}
+
 
 
 const passwordInput = document.getElementById("password");
