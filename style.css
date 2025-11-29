@@ -191,3 +191,10 @@ nav{
     color: #29ABE2;
     scale: 1.1;
 }
+
+.external-back{
+    display: none;
+}
+.external-back img{
+    width: 20px;
+}
