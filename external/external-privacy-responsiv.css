@@ -1,0 +1,80 @@
+@media(max-width:900px){
+    header{
+        height: 80px;
+    }
+
+    nav{
+        position: fixed;
+        flex-direction: row;
+        height: 80px;
+        width: 100%;
+        bottom: 0;
+        top: unset;
+        padding: unset;
+    }
+
+    .nav-login:hover {
+        background: #2A3647;
+        cursor: pointer;
+    }
+
+    .header-under{
+        display: none;
+    }
+
+    .nav-logo{
+        position: fixed;
+        top: 0px;
+        left: 20px;
+        width: 50px;
+        height: 80px;
+    }
+
+    .nav-rights{
+        padding-top: unset;
+        width: unset;
+        height: auto;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .nav-rights a{
+        width: 120px;
+        height: 55px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+    }
+
+    .nav-rights a:hover {
+        color: #FFFFFF;
+        background-color: #091931!important;
+        cursor: pointer;
+    }
+    .nav-rights p:hover{
+        color: #FFFFFF!important;
+        scale: 1;
+    }
+
+    .privacy-wrapper{
+        padding-bottom: 70px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: unset;
+    }
+}
+
+@media(max-width:428px){
+    .nav-rights{
+        width: 232px;
+    }
+
+    .nav-login{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-login img{
+        margin-top: 16px;
+    }
+}
