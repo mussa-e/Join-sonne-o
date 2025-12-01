@@ -198,3 +198,7 @@ nav{
 .external-back img{
     width: 20px;
 }
+
+.help-submenu{
+    display: none;
+}
