@@ -16,13 +16,16 @@ function logout() {
   function updateLogo() {
     const logo = document.querySelector('.nav-logo');
     const helpSubmenu = document.getElementById('help-submenu');
+    const delimiter = document.getElementById('delimiter-horizontal');
 
     if (window.matchMedia("(max-width: 900px)").matches) {
         logo.src = "../img/join-logo-blue.svg";
         helpSubmenu.style.display = "block";
+        delimiter.style.display = "flex";
     } else {
         logo.src = "../img/join-logo-white.svg";
         helpSubmenu.style.display = "none";
+        delimiter.style.display = "none";
     }
 }
 updateLogo();
