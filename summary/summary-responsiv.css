@@ -11,7 +11,7 @@
         padding: 0;
         margin-top: 0;
         margin-bottom: 40px;
-        margin-left: 40px;
+        margin-left: 8px;
         width: unset;
         height: unset;
         gap: unset;
@@ -43,13 +43,12 @@
 
     .summary-counter{
         width: auto;
-        margin-left: 40px;
+        margin-left: 8px;
         align-items: unset;
     }
 
     .box-upper{
         width: auto;
-        justify-content: unset;
     }
 
     .box-upper-left{
@@ -63,11 +62,14 @@
     }
 
     .box-middle{
-        width: fit-content;
+        width: auto;
         padding: 0 16px;
         gap: 24px;
     }
 
+    .box-lower{
+        width: auto;
+    }
     .box-lower-content{
         width: unset;
         height: unset;
@@ -178,9 +180,29 @@
     .box-lower-content-text{
         font-size: 16px;
     }
+    .box-middle{
+        height: unset;
+    }
+    .box-middle-delimiter{
+        height: 70%;
+    }
 }
 
 @media(max-width:430px){
+    main{
+        padding-top: 70px;
+        overflow-y: hidden;
+    }
+    .summary-header{
+        margin-left: 0;
+    }
+    .summary-counter{
+        margin-left: 0;
+        gap: 12px;
+    }
+    .box-upper{
+        gap: 8px;
+    }
     .box-upper-left img{
         width: 40px;
     }
@@ -192,6 +214,32 @@
     }
     .box-upper-right img{
         width: 40px;
+    }
+    .urgent-symbol{
+        width: 40px;
+    }
+    .box-upper-left{
+        padding: 24px;
+        gap: 12px;
+    }
+    .box-upper-right{
+        padding: 24px;
+        gap: 12px;
+    }
+    .box-middle{
+        gap: 8px;
+    }
+    .count-urgent{
+        font-size: 36px;
+    }
+    .box-lower{
+        gap: 8px;
+    }
+    .box-lower-content{
+        gap: unset;
+    }
+    .box-lower-content-num{
+        font-size: 36px;
     }
 }
 
