@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 100px;
+    margin-left: 30px;
     width: 625px;
     height: 73px;
     top: 206px;
@@ -26,7 +25,7 @@
 }
 
 .summary-counter {
-    margin-left: 100px;
+    margin-left: 30px;
     opacity: 1;
     display: flex;
     flex-direction: column;
@@ -245,7 +244,7 @@
     height: 136px;
     opacity: 1;
     top: 550px;
-    left: 800px;
+    left: 700px;
     gap: 3px;
     display: flex;
     flex-direction: column;
