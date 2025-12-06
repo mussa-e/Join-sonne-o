@@ -6,7 +6,10 @@ function guestLogin() {
     sessionStorage.setItem("guestSrc", "../img/guest.svg");
     sessionStorage.removeItem("initials");
 
+    loggedIn = true;
+    console.log(loggedIn);
     window.location.href = "../summary/summary.html";
+    
   }
 
 
@@ -25,6 +28,8 @@ function logIn() {
     sessionStorage.removeItem("guestSrc");
     currentUser = sessionStorage.setItem("currentUser", user.name);
     window.location.href = "../summary/summary.html";
+    loggedIn = true;
+    console.log(loggedIn);
   }
 
   else if(!userMail && !email.value == ""){

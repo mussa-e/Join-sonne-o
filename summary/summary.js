@@ -97,3 +97,16 @@ function renderNextDate() {
 }
 
 
+function updateDelimiter() {
+    const delimiter = document.getElementById('delimiter-horizontal');
+
+    if (window.matchMedia("(max-width: 900px)").matches) {
+        
+        delimiter.style.display = "flex";
+    } else {
+        
+        delimiter.style.display = "none";
+    }
+}
+updateDelimiter();
+window.addEventListener('resize', updateDelimiter);

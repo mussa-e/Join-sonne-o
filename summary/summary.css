@@ -263,5 +263,17 @@
     margin: 0;
 }
 
+.greet-mobile{
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    display: flex!important;
+    background: #F6F7F8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
 
 
