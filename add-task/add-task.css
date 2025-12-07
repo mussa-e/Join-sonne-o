@@ -71,7 +71,7 @@ main textarea:focus{
 }
 .input-section-left label{
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 4px;
 }
 .line{
@@ -227,6 +227,7 @@ main textarea:focus{
     margin-top: 100px;
     display: flex;
     align-items: center;
+    background: #F6F7F8;
 }
 .footer p{
     font-size: 16px;
@@ -347,7 +348,7 @@ textarea:focus::placeholder {
 
     .required {
         color: #FF8190;
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 0px;
         font-weight: 400;
     }
