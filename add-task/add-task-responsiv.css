@@ -130,3 +130,84 @@
         margin-left: unset;
     }
 }
+
+
+@media(max-width:428px){
+    main h1{
+        font-size: 40px;
+    }
+    main input,
+    main select,
+    main textarea{
+        width: 300px;
+    }
+    .assign-input{
+        width: 300px!important;
+    }
+    .assign-img{
+        right: 25px;
+    }
+    .select-trigger{
+        width: 345px;
+    }
+    .select-trigger img{
+        right: 25px;
+    }
+    .options{
+        width: 345px;
+    }
+
+    .priority-section{
+        justify-content: unset;
+        gap: 8px;
+    }
+    .priority-section button{
+        
+    }
+
+    .assigned-list{
+        gap: 16px;
+    }
+    .assigned-list-initials{
+        padding: 2px;
+    }
+}
+
+
+@media(max-width:390px){
+    main input,
+    main select,
+    main textarea{
+        width: 240px;
+    }
+    .assign-input{
+        width: 240px!important;
+    }
+    .assign-img{
+        position: relative;
+        left: 245px;
+        top: -43px;
+    }
+    .select-trigger{
+        width: 285px;
+    }
+    .select-trigger img{
+        position: relative;
+        left: 20px;
+    }
+    .options{
+        width: 285px;
+    }
+    .priority-section{
+        flex-direction: column;
+    }
+    .priority-section button{
+        width: 285px;
+    }
+    .assigned-list-initials{
+        width: 95px;
+    }
+    .options-assigned-to{
+        top: 55px;
+    }
+}
