@@ -1,3 +1,40 @@
+@media(max-width:1260px){
+    .summary-counter{
+        width: 500px;
+        margin-left: 0;
+    }
+    .greeting{
+        left: 420px;
+    }
+    .greeting-time{
+        font-size: 36px;
+    }
+    .box-upper{
+        width: auto;
+        gap: 16px;
+        margin-left: -100px;
+    }
+    .box-upper-left, .box-upper-right{
+        height: unset;
+        width: auto;
+    }
+    .box-middle {
+        width: auto;
+        padding: 0 16px;
+        gap: 24px;
+        margin-left: -100px;
+    }
+    .box-lower{
+        gap: 16px;
+        width: 370px;
+        margin-left: -100px;
+    }
+    .box-lower-content{
+        gap: unset;
+        padding: unset;
+    }
+}
+
 @media(max-width:1100px){
     .header-right{
         margin-left: 0;
@@ -53,6 +90,7 @@
 
     .box-upper{
         width: auto;
+        margin-left: unset;
     }
 
     .box-upper-left{
@@ -69,10 +107,12 @@
         width: auto;
         padding: 0 16px;
         gap: 24px;
+        margin-left: unset;
     }
 
     .box-lower{
         width: auto;
+        margin-left: unset;
     }
     .box-lower-content{
         width: unset;
@@ -177,6 +217,9 @@
     }
     .box-middle-text span{
         font-size: 16px;
+    }
+    .box-lower{
+        gap: 32px;
     }
     .box-lower-content-num{
         font-size: 40px;
