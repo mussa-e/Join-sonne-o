@@ -6,7 +6,7 @@
         margin-left: 100px;
     }
     .input-section-left{
-        margin-left: 0;
+        margin-left: 16px;
         width: 100%;
         max-width: 367px;
     }
@@ -16,6 +16,10 @@
     .input-section-right{
         width: 100%;
         max-width: 367px;
+        margin-left: 16px;
+    }
+    .footer{
+        gap: 40px;
     }
 }
 
@@ -43,6 +47,10 @@
     .footer{
         position: fixed;
         bottom: 80px;
+        flex-direction: column;
+        gap: unset;
+        margin-left: 0px;
+        padding-bottom: 8px;
     }
 
 
@@ -171,6 +179,12 @@
     .assigned-list-initials{
         padding: 2px;
     }
+    .subtask-icon{
+        left: 280px;
+    }
+    .ul-div{
+        width: 340px;
+    }
 }
 
 
@@ -209,5 +223,17 @@
     }
     .options-assigned-to{
         top: 55px;
+    }
+    .footer-left{
+        margin-left: -50px;
+    }   
+    .footer-buttons-section{
+        margin-left: -50px;
+    }
+    .subtask-icon{
+        left: 220px;
+    }
+    .ul-div{
+        width: 285px;
     }
 }
