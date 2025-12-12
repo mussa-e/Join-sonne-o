@@ -9,7 +9,7 @@
     align-items: center;
     max-width: 1440px;
     padding-right: 100px;
-
+    gap: 16px;
     width: 1056;
     height: 73;
     top: 79.5px;
@@ -72,14 +72,11 @@
     font-weight: 700;
     display: flex;
     align-items: center;
-    width: 160;
-    height: 48;
+    justify-content: center;
+    width: 152px;
+    height: 48px;
     gap: 8px;
     opacity: 1;
-    padding-top: 8px;
-    padding-right: 16px;
-    padding-bottom: 8px;
-    padding-left: 16px;
     border-radius: 10px;    
     border-width: 1px;
     background-color:#2A3647;
@@ -105,8 +102,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    width: 244px;
+    /* width: 244px; */
     height: 24px;
     opacity: 1;
 }
@@ -126,7 +122,8 @@
     margin-top: 20px;
 }
 .placeholder {
-    width: 252px;
+    /* width: 252px; */
+    min-width: 195px;
     height: 48px;
     opacity: 1;
     gap: 10px;

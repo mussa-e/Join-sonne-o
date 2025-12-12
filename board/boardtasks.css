@@ -76,10 +76,11 @@
 
 .no-result{
   position: relative;
-  left: 50%;
   top: 30%;
   font-size: 18px;
   font-weight: 500;
+  width: 100vw;
+  text-align: center;
 }
 
 
