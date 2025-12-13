@@ -119,10 +119,16 @@
     }
 
 
+/* ///////////////////////////////////////// */
 
-
+    .placeholder{
+        width: 90vw;
+    }
     .schedule-wrapper{
         margin-left: 0;
+    }
+    .schedule-header{
+        width: 90vw;
     }
     .board-header{
         margin-left: 8px;
@@ -130,16 +136,22 @@
         padding-right: 40px;
         top: 30px;
         position: unset;
-        justify-content: center;
+        justify-content: space-between;
+        width: 90vw;
     }
     .board-header-right input {
+        /* position: absolute;
+        top: 60px;
+        transform: translateX(-90%);
+        width: 90vw; */
         position: absolute;
         top: 60px;
-        transform: translateX(-65%);
+        left: -80vw;
+        right: -2vw;
     }
 
     .search-glas{
-        right: -50px;
+        right: -10px;
         transform: translateY(135%);
     }
     .board-header-right button{
