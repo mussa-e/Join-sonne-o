@@ -33,9 +33,6 @@
     
 }
 .board-header-right input {
-    width: 312;
-    height: 48;
-    gap: 10px;
     opacity: 1;
     padding: 8px 16px;
     border-radius: 10px;
