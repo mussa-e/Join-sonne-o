@@ -206,3 +206,7 @@ nav{
 .delimiter-horizontal{
     display: none;
 }
+
+.no-scroll{
+    overflow: hidden;
+}

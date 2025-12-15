@@ -169,6 +169,42 @@
     .no-result{
         left: unset;
     }
+
+    .big-view-wrapper{
+        width: 65vw;
+        height: 90vh;
+        overflow-y: scroll;
+    }
+    
+    .ticket-footer-wrapper{
+        position: fixed;
+        bottom: -29%;
+        left: 95%;
+    }
 }
 
 
+@media(max-width:428px){
+    .ticket-category{
+        font-size: 20px;
+    }
+    .ticket-title{
+        font-size: 40px;
+    }
+    .ticket-description{
+        font-size: 16px;
+    }
+    .ticket-date{
+        font-size: 16px;
+    }
+    .ticket-priority{
+        font-size: 16px;
+    }
+    .ticket-priority{
+        font-size: 16px;
+    }
+    .ticket-subtask{
+        font-size: 16px;
+    }
+
+}

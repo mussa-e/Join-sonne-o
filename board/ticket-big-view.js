@@ -3,6 +3,8 @@ function ticketBigView(id){
     const ticketPopup = document.getElementById("big-view-wrapper");
     ticketPopup.classList.add("show");
     ticketPopup.innerHTML = bigViewHTML(t, id);
+
+    document.body.classList.add("no-scroll");
 }
 
 
@@ -224,6 +226,7 @@ function updateDoneCount(task,taskId){
 function closeTicket(){
     const ticketPopup = document.getElementById("big-view-wrapper");
     ticketPopup.classList.remove("show");
+    document.body.classList.remove("no-scroll");
 }
 
 
