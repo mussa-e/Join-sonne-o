@@ -178,13 +178,16 @@
     
     .ticket-footer-wrapper{
         position: fixed;
-        bottom: -29%;
+        bottom: 1%;
         left: 95%;
     }
 }
 
 
 @media(max-width:428px){
+    .big-view-wrapper{
+        height: 630px;
+    }
     .ticket-category{
         font-size: 20px;
     }

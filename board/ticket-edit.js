@@ -10,6 +10,8 @@ function ticketEdit(id) {
     const t = tasks[id];
     const ticketPopup = document.getElementById("big-view-wrapper");
 
+    document.getElementById("big-view-wrapper").style.overflowY = "hidden";
+
     ticketPopup.innerHTML = `
         <div class="ticket-header edit-ticket-header">
             
@@ -180,6 +182,8 @@ async function saveEditedTicket(id) {
     const title = document.getElementById("edit-title").value.trim();
     const description = document.getElementById("edit-description").value.trim();
     const dueDate = document.getElementById("edit-date").value;
+
+    document.getElementById("big-view-wrapper").style.overflowY = "scroll";
 
     // Subtasks aktualisieren
     const updatedSubtasks = window.editSubtasks.map((st, i) => ({
