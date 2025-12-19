@@ -171,7 +171,7 @@
     }
 
     .big-view-wrapper{
-        width: 65vw;
+        width: 55vw;
         height: 90vh;
         overflow-y: scroll;
     }
@@ -187,6 +187,7 @@
 @media(max-width:428px){
     .big-view-wrapper{
         height: 630px;
+        width: 70vw;
     }
     .ticket-category{
         font-size: 20px;

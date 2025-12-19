@@ -1,0 +1,25 @@
+@media(max-width:900px) {
+    .edit-assign-input{
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+    .edit-subtask{
+        width: unset;
+    }
+    .edit-subtask-input{
+        width: unset!important;
+    }
+    
+    
+}
+
+
+@media(max-width:700px) {
+    .priority-section{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+}
