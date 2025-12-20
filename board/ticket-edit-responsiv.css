@@ -9,7 +9,8 @@
         width: unset;
     }
     .edit-subtask-input{
-        width: unset!important;
+        box-sizing: border-box;
+        width: 100% !important;
     }
     
     
@@ -20,6 +21,32 @@
     .priority-section{
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .big-view-wrapper{
+        padding: 8px 16px;
+    }
+    
+}
+
+@media(max-width:600px) {
+    .ticket-edit-form label{
+        font-size: 16px;
+    }
+    .ticket-edit-form input{
+        font-size: 16px;
+    }
+    .ticket-edit-form textarea{
+        font-size: 16px;
+    }
+    .priority-section button{
+        font-size: 16px;
+    }
+    .save-btn{
+        font-size: 16px;
+    }
+    .save-btn img{
+        height: 12px;
     }
     
 }
