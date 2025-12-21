@@ -1,0 +1,51 @@
+@media(max-width:900px) {
+    .add-task-popup.show {
+        overflow-y: auto;
+        top: 70%;
+        height: 100%;
+        width: 100%;
+    }
+    .input-container{
+        flex-direction: column;
+    }
+    .line{
+        display: none;
+    }
+    main{
+        margin-left: 5px;
+    }
+    .popup-header{
+        width: 100%;
+    }
+    body{
+        overflow: hidden;
+    }
+    
+    
+}
+
+@media(max-width:500px) {
+    main h1{
+        font-size: 34px;
+    }
+    .input-section-left label{
+        font-size: 16px;
+    }
+    main input{
+        font-size: 16px;
+    }
+    main textarea{
+        font-size: 16px;
+    }
+    .input-section-right label{
+        font-size: 16px;
+    }
+    .select-trigger{
+        font-size: 16px;
+    }
+
+    
+    
+    
+    
+}

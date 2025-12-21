@@ -251,7 +251,7 @@ textarea:focus::placeholder {
 
 .required {
     color: #FF8190;
-    font-size: 12px;
+    font-size: 16px;
     margin-top: 0px;
     font-weight: 400;
 }
