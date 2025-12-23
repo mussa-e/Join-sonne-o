@@ -9,7 +9,7 @@
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: #F6F7F8;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   z-index: 100;
 }

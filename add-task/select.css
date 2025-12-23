@@ -128,8 +128,8 @@
   font-weight: 400;
   color: #FFFFFF;
   height: 24px;
+  width: 24px;
   align-items: center;
   justify-content: center;
-  display: flex
-;
+  display: flex;
 }
