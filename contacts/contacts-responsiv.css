@@ -1,0 +1,110 @@
+@media(max-width:900px){
+    header{
+        height: 80px;
+        justify-content: flex-end;
+    }
+
+    .header-under{
+        justify-content: flex-end;
+        margin-right: 330px;
+    }
+
+    .header-under p{
+        display: none;
+    }
+
+    .help-img{
+        display: none;
+    }
+
+    .external-back{
+        justify-content: end;
+        width: 95%;
+        display: flex;
+        position: absolute;
+        top: 150px;
+    }
+
+    nav{
+        position: fixed;
+        flex-direction: row;
+        height: 80px;
+        width: 100%;
+        bottom: 0;
+        top: unset;
+        padding: unset;
+    }
+
+    .nav-links{
+        padding-top: unset;
+        flex-direction: row;
+        width: 95%;
+        justify-content: space-around;
+        gap: 0;
+    }
+    .nav-links a{
+        flex-direction: column;
+        gap: 0;
+        padding-top: 16px;
+        width: auto;
+    }
+
+    .nav-logo{
+        position: fixed;
+        top: 0px;
+        left: 20px;
+        width: 50px;
+        height: 80px;
+    }
+
+    .nav-rights{
+        display: none;
+    }
+
+
+    .legal-wrapper{
+        padding-bottom: 70px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: unset;
+    }
+
+
+
+
+
+    main{
+        margin-left: unset;
+        padding-top: 80px;
+    }
+    .add-contact-btn{
+        top: 100px;
+        margin-left: 20px;
+        width: auto;
+        padding: 12px;
+    }
+    .contact-div{
+        width: 300px;
+    }
+    .letter-sec{
+        padding: unset;
+    }
+    .letter-sec p{
+        padding: 0 25px;
+    }
+    .line-horizontal{
+        width: 270px;
+    }
+    .contact-nav-initials{
+        width: 40px;
+    }
+    .contact-nav-details{
+        width: 190px;
+    }
+    .main-header{
+        left: 250px;
+    }
+    .contact-overview{
+        left: 350px;
+    }
+}
