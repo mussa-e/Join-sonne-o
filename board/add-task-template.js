@@ -4,6 +4,7 @@ let taskStatus;
 function addTask(stat) {
       const popup = document.getElementById("add-task-popup");
       popup.classList.add("show");
+      document.body.classList.add("no-scroll");
       taskStatus = stat;
 }
 
@@ -11,6 +12,7 @@ function addTask(stat) {
 function closePopup() {    
     const popup = document.getElementById("add-task-popup");
     popup.classList.remove("show");
+    document.body.classList.remove("no-scroll");
 }
 
 

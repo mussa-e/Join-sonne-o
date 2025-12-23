@@ -17,9 +17,6 @@
     .popup-header{
         width: 100%;
     }
-    body{
-        overflow: hidden;
-    }
 }
 
 @media(max-width:800px) {
@@ -57,12 +54,12 @@
     }
     .assigned-symbol{
         font-size: 16px;
-    
+    }
 }
 
 @media(max-width:428px){
     .input-section-left{
-        width: 290px;
+        width: 90%;
     }
     .input-section-right{
         width: 90%;
