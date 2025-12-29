@@ -7,7 +7,6 @@
 @media(max-width:1155px){
     .schedule-wrapper{
         flex-direction: column;
-        align-items: center;
         padding-bottom: 100px;
     }
     .schedule-header{
@@ -19,7 +18,11 @@
     .task-div{
         height: auto;
         padding-bottom: 30px;
-        width: 252px;
+        width: 100%;
+        flex-direction: row;
+        position: relative;
+        overflow-x: auto;
+        scrollbar-width: none;
     }
     .no-result{
         top: 8%;
@@ -128,9 +131,10 @@
     }
     .schedule-wrapper{
         margin-left: 0;
+        padding: 0 16px;
     }
     .schedule-header{
-        width: 90vw;
+        width: 100%;
     }
     .board-header{
         margin-left: 8px;
@@ -185,6 +189,9 @@
 
 
 @media(max-width:428px){
+    .schedule-wrapper{
+        padding: 0 8px;
+    }
     .big-view-wrapper{
         height: 630px;
     }

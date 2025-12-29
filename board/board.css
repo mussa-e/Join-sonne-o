@@ -138,9 +138,10 @@
 .task-div{
     display: flex;
     width: 252px;
-    height: 100vh;
+    height: auto;
     gap: 16px;
     flex-direction: column;
+    margin-bottom: 16px;
 }
 
 .task-card{
@@ -182,3 +183,6 @@
     color: #A8A8A8;
 }
 
+/* .task-div::-webkit-scrollbar {
+  display: none;
+} */
