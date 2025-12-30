@@ -117,4 +117,15 @@
   }
 }
 
+.card-category{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.swap-img{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
 
