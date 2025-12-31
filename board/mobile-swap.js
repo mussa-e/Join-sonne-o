@@ -30,3 +30,11 @@ function stopDragging() {
 }
 stopDragging();
 window.addEventListener("resize", stopDragging);
+
+
+function showSwapOptions(event, id) {
+  console.log("swap clicked");
+  event.stopPropagation();
+  const swapWrapper = document.getElementById(`swap-wrapper-${id}`);
+  swapWrapper.classList.toggle("d-none");
+}

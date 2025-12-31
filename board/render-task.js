@@ -68,7 +68,18 @@ function renderTasktoBoard(task, id) {
   const taskHTML = `
     <div onclick="ticketBigView('${id}')" class="task-card" data-id="${id}" id="${id}"
       draggable="true" ondragstart="startDragging('${id}')">
-      <div class="card-category"><p class="category ${checkBG(task.category)}">${task.category}</p><img class="swap-img" id="swap-img" src="../img/swap-frame.svg"></div>
+      
+      <div class="card-category">
+        <p class="category ${checkBG(task.category)}">${task.category}</p>
+        <img onclick="showSwapOptions(event, '${id}')" class="swap-img" id="swap-img" src="../img/swap-frame.svg">
+      </div>
+
+        <div id="swap-wrapper-${id}" class="swap-wrapper d-none">
+            <div class="swap-header">Move to</div>
+            <div class="swap-up"><img src="../img/arrow_up_swap.svg"><p>Up</p></div>
+            <div class="swap-down"><img src="../img/arrow_down_swap.svg"><p>Down</p></div>
+        </div> 
+      
       <h3>${task.title}</h3>
       <p class="description preview">${task.description}</p>
 
