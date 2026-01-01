@@ -158,13 +158,18 @@ function allowDrop(ev){
   ev.preventDefault();
 }
 
+
 function dragAnimation(box) {
-  box.addEventListener("mousedown", () => box.classList.add("drag-animation"));
+  box.addEventListener("mousedown", (e) => {
+    if (e.target.closest(".swap-img")) return;
+    box.classList.add("drag-animation");
+  });
+
   box.addEventListener("mouseup", () => box.classList.remove("drag-animation"));
   box.addEventListener("mouseleave", () => box.classList.remove("drag-animation"));
   box.addEventListener("dragend", () => box.classList.remove("drag-animation"));
-
 }
+
 
 function startDragging(id) {
     currentDraggedElement = id;
