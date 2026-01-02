@@ -76,8 +76,8 @@ function renderTasktoBoard(task, id) {
 
         <div id="swap-wrapper-${id}" class="swap-wrapper d-none">
             <div class="swap-header">Move to</div>
-            <div class="swap-up"><img src="../img/arrow_up_swap.svg"><p>Up</p></div>
-            <div class="swap-down"><img src="../img/arrow_down_swap.svg"><p>Down</p></div>
+            <div onclick="swapUp(event, '${task.status}', '${id}')" class="swap-up"><img src="../img/arrow_up_swap.svg"><p>Up</p></div>
+            <div onclick="swapDown(event, '${task.status}', '${id}')" class="swap-down"><img src="../img/arrow_down_swap.svg"><p>Down</p></div>
         </div> 
       
       <h3>${task.title}</h3>
@@ -230,3 +230,31 @@ function removeHighlight(containerId) {
         container.removeChild(highlightDiv);
     }
 }
+// Ende drag and drop/////////////////////////////////////////////////////
+
+
+function swapUp(event, status, id) {
+  event.stopPropagation();
+  currentDraggedElement = id;
+
+  let stattuses = ["todo", "progress", "feedback", "done"];
+  let currentIndex = stattuses.indexOf(status);
+
+  if (currentIndex > 0) {
+    moveTo(stattuses[currentIndex - 1]);
+  }
+}
+
+
+function swapDown(event, status, id) {
+  event.stopPropagation();
+  currentDraggedElement = id;
+
+  let stattuses = ["todo", "progress", "feedback", "done"];
+  let currentIndex = stattuses.indexOf(status);
+
+  if (currentIndex < stattuses.length - 1) {
+    moveTo(stattuses[currentIndex + 1]);
+  }
+}
+

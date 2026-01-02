@@ -131,7 +131,7 @@
     }
     .schedule-wrapper{
         margin-left: 0;
-        padding: 0 16px;
+        padding: 0 16px 80px 16px;
     }
     .schedule-header{
         width: 100%;
@@ -190,7 +190,7 @@
 
 @media(max-width:428px){
     .schedule-wrapper{
-        padding: 0 8px;
+        padding: 0 8px 80px 8px;
     }
     .big-view-wrapper{
         height: 630px;

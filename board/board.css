@@ -92,7 +92,7 @@
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
-    padding: 0 64px;
+    padding: 0 64px 80px 64px;
 }
 
 .schedule-header {
