@@ -451,3 +451,11 @@
     margin-top: 0;
 }
 
+.contact-back-arrow{
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    cursor: pointer;
+}
+

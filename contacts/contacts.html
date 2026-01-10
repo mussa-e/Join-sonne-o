@@ -79,7 +79,7 @@
     </nav>
 
     <main>
-        <div class="contact-div">
+        <div class="contact-div" id="contact-div">
 
             <div onclick="addNewContact()" class="add-contact-btn">
                 <p>Add new contact</p>
@@ -324,8 +324,12 @@
         </div>
 
 
+        <div class="contact-back-arrow" id="contact-back-arrow" onclick="backToContactList()">
+            <img src="../img/blueBackArrow.svg">
+        </div>
 
-        <div class="main-header">
+
+        <div class="main-header" id="main-header">
             <h1>Contacts</h1>
             <img class="del-vertical" src="../img/delimiter-vertical-blue.svg">
             <p>Better with a team</p>
@@ -358,6 +362,7 @@
     <script src="../contacts/contact-template.js"></script>
     <script src="../sign up/register.js"></script>
     <script src="../board/ticket-big-view.js"></script>
+    <script src="../contacts/contacts-responsiv.js"></script>
 
     
 

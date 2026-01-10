@@ -309,6 +309,8 @@ async function renderContactList() {
 function showFromContactList(initials, contactId){
     const contact = contacts.find(c => c.id == contactId);
     document.getElementById("contact-overview").innerHTML = showFromContactListHTML(initials, contact);
+
+    toggleResponsivView();
 }
 
 

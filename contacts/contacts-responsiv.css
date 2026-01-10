@@ -205,3 +205,32 @@
         margin-left:unset;
     }
 }
+
+@media(max-width:670px){
+    .contact-div{
+        width: 100%;
+        align-items: center;
+    }
+    .main-header{
+        display: none;
+        left: -60px;
+    }
+    .contact-overview{
+        display: none;
+        left: 5px;
+        top: 210px;
+    }
+    .contact-information-text{
+        margin-top: 24px;
+    }
+    .under-div{
+        margin-top: 30px;
+    }
+    .contact-initials {
+        width: 80px;
+        height: 80px;
+    }
+    .contact-name-section p {
+        font-size: 30px;
+    }
+}
